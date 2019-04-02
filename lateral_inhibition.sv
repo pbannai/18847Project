@@ -5,7 +5,7 @@
 module lateral_inhibition(
     input logic clk, rst_l,
     input logic [$clog2(`time_period)-1:0] time_val,
-    input logic [`neurons_per_layer:0] spike_volley,
+    input logic [`neurons_per_layer-1:0] spike_volley,
     output logic output_spike,
     output logic [$clog2(`time_period)-1:0] output_spike_time,
     output logic [$clog2(`neurons_per_layer)-1:0] winning_neuron
