@@ -14,10 +14,10 @@ module ffi(
     always_comb begin
         num_spikes = '0;  
         foreach(spikes_in[i]) begin
-            num_spikes += spikes_in[i];
+            num_spikes += !spikes_in[i];
         end
         if($unsigned(num_spikes) > `ffi_max)begin
-            spikes_out = spikes_in;
+            spikes_out = ~spikes_in;
         end else begin
             spikes_out = '0;
         end

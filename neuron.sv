@@ -2,6 +2,8 @@
 
 `include "define.vh"
 
+//Accumulator
+
 module neuron(
     input  logic [`receptive_field-1:0] spikes_in,
     input  logic [`receptive_field-1:0][`WBITS-1:0] weights,
