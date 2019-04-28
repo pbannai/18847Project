@@ -14,22 +14,23 @@ module layer(
     logic li_output_spike_time[$clog2(`time_period)] li_output_spike_time, output_spike_time_next;
     logic [$clog2(`neurons_per_layer)-1:0] li_winning_neuron, winning_neuron_next, winning_neuron;
 
-    logic [$clog2(`neurons_per_layer)-1:0][`receptive_field-1:0][`WBITS-1:0] weights, weights_ff;
+    logic [$clog2(`neurons_per_layer)-1:0][`receptive_field-1:0][`WBITS-1:0] weights_next, weights_ff;
 
     logic [$clog2(`time_period):0] li_output_spike_time, output_spike_time_next, output_spike_time_ff;
 
-  
+   
 
     always_ff @(posedge clk or negedge rst_l)begin
         if(rst_l == 1'b0)begin
             output_spike_time <= '0;
             output_spike_time_ff <= '0;
             winning_neuron <= '0;
+            weights_ff <= 0;
         end else begin
             output_spike_time_ff <= output_spike_time_ff_next;
             output_spike_time <= output_spike_time_next;
             winning_neuron <= winning_neuron_next;
-
+            weights_ff <= weights_next;
         end
     end
 
@@ -76,6 +77,37 @@ module layer(
                           .output_spike_time(li_output_spike_time[$clog2(`time_period)-1:0]
                           .winning_neuron(li_winning_neuron));
     
+    generate
+        //stdp
+        for(i = 0; i < `neurons_per_layer; i++)begin
+            if(time_val == `time_period - 1)begin
+                if(winning_neuron == i)begin
+                    if(neuron_spikes[i] == 1'b1)begin
+                        assign weights_next[i] = `wmax;        
+                    end else begin
+                        assign weights_next[i] = 0;        
+                    end
+                end else if(neuron_spikes[i] == 1'b1)begin
+                    if(neuron_spikes[i] == 1'b1)begin
+                        assign weights_next[i] = 0;
+                    end else begin
+                        assign weights_next[i] = weights_ff[i];
+                    end
+                end else begin
+                    if(spike_times[i][$clog2(`time_period)] == 1'b0 && weights_ff[i] < `wmax )begin
+                        assign weights_next[i] = weights_ff[i] + 1;
+                    end else begin
+                        assign weights_next[i] = weights_ff[i];
+                    end
+                end
+            end else begin
+                assign weights_next[i] = weights_ff[i];
+            end
+        end
+
+    endgenerate
+
+
     always_comb begin
         if(time_val == `time_period - 1)begin
             output_spike_time_next = li_output_spike_time;
