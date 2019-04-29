@@ -1,9 +1,4 @@
 {
-    "...MASTER...": [
-        "SIM",
-        "amcQw",
-        "module"
-    ],
     "std": [
         "std",
         "reYIK",
@@ -14,9 +9,9 @@
         "KAFFH",
         "module"
     ],
-    "spike_generation": [
-        "spike_generation",
-        "ScJZz",
+    "neuron": [
+        "neuron",
+        "GFYjA",
         "module"
     ],
     "neuron_tb": [
@@ -24,9 +19,14 @@
         "YAhqZ",
         "module"
     ],
-    "neuron": [
-        "neuron",
-        "GFYjA",
+    "spike_generation": [
+        "spike_generation",
+        "ScJZz",
+        "module"
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
         "module"
     ]
 }

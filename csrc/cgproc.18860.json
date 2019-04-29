@@ -1,0 +1,43 @@
+{
+    "ObjArchives": [
+        {
+            "archive": "archive.20/_18860_archive_1.a",
+            "objects": [
+                [
+                    "YAhqZ_d.o",
+                    13407
+                ]
+            ],
+            "size": 13407
+        }
+    ],
+    "Modules": {
+        "...MASTER...": {},
+        "std": {},
+        "layer": {},
+        "neuron": {},
+        "neuron_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 8
+        },
+        "spike_generation": {}
+    },
+    "CompUnits": {
+        "amcQw_d": {
+            "mode": 4,
+            "mod": "...MASTER...",
+            "out": "objs/amcQw_d.o",
+            "bytes": 8193,
+            "checksum": 4294967295
+        },
+        "YAhqZ_d": {
+            "mode": 4,
+            "mod": "neuron_tb",
+            "out": "YAhqZ_d.o",
+            "bytes": 13407,
+            "archive": "archive.20/_18860_archive_1.a",
+            "checksum": 4294967295
+        }
+    },
+    "reusePaths": {}
+}

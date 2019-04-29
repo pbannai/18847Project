@@ -1,119 +1,6 @@
 {
     "MlibObjs": {},
-    "stat": {
-        "ru_childs_cgstart": {
-            "ru_nvcsw": 0,
-            "ru_majflt": 0,
-            "ru_utime_sec": 0.0,
-            "ru_stime_sec": 0.0,
-            "ru_minflt": 0,
-            "ru_maxrss_kb": 0,
-            "ru_nivcsw": 0
-        },
-        "nQuads": 1015,
-        "ru_self_cgstart": {
-            "ru_nvcsw": 110,
-            "ru_majflt": 0,
-            "ru_utime_sec": 0.040468999999999998,
-            "ru_stime_sec": 0.021246000000000001,
-            "ru_minflt": 12986,
-            "ru_maxrss_kb": 49256,
-            "ru_nivcsw": 7
-        },
-        "nMops": 3214,
-        "totalObjSize": 99788,
-        "ru_self_end": {
-            "ru_nvcsw": 165,
-            "ru_majflt": 0,
-            "ru_utime_sec": 0.056771000000000002,
-            "ru_stime_sec": 0.027869000000000001,
-            "ru_minflt": 15552,
-            "ru_maxrss_kb": 57820,
-            "ru_nivcsw": 7
-        },
-        "ru_childs_end": {
-            "ru_nvcsw": 0,
-            "ru_majflt": 0,
-            "ru_utime_sec": 0.0,
-            "ru_stime_sec": 0.0,
-            "ru_minflt": 0,
-            "ru_maxrss_kb": 0,
-            "ru_nivcsw": 0
-        },
-        "mopSpeed": 197153.72346951289,
-        "quadSpeed": 62262.299104404352,
-        "Frontend(%)": 71.284634760705288,
-        "mop/quad": 3.1665024630541874,
-        "outputSizePerQuad": 98.0,
-        "CodeGen(%)": 28.715365239294716
-    },
-    "PrevCompiledModules": {
-        "spike_generation": {
-            "ScJZz_d": {
-                "bytes": 8511,
-                "mod": "spike_generation",
-                "mode": 4,
-                "archive": "archive.7/_prev_archive_1.a",
-                "checksum": 4294967295,
-                "out": "ScJZz_d.o"
-            }
-        },
-        "neuron_tb": {
-            "YAhqZ_d": {
-                "bytes": 12489,
-                "mod": "neuron_tb",
-                "mode": 4,
-                "archive": "archive.7/_prev_archive_1.a",
-                "checksum": 4294967295,
-                "out": "YAhqZ_d.o"
-            }
-        },
-        "neuron": {
-            "GFYjA_d": {
-                "bytes": 8145,
-                "mod": "neuron",
-                "mode": 4,
-                "archive": "archive.7/_prev_archive_1.a",
-                "checksum": 4294967295,
-                "out": "GFYjA_d.o"
-            }
-        },
-        "...MASTER...": {
-            "amcQw_d": {
-                "bytes": 8193,
-                "mod": "...MASTER...",
-                "out": "objs/amcQw_d.o",
-                "mode": 4,
-                "checksum": 4294967295
-            }
-        },
-        "std": {
-            "reYIK_d": {
-                "bytes": 28470,
-                "mod": "std",
-                "mode": 4,
-                "archive": "archive.7/_prev_archive_1.a",
-                "checksum": 4294967295,
-                "out": "reYIK_d.o"
-            }
-        },
-        "layer": {
-            "KAFFH_d": {
-                "bytes": 33947,
-                "mod": "layer",
-                "out": "KAFFH_d.o",
-                "mode": 4,
-                "archive": "archive.7/_22319_archive_1.a",
-                "checksum": 4294967295
-            }
-        }
-    },
     "NameTable": {
-        "...MASTER...": [
-            "SIM",
-            "amcQw",
-            "module"
-        ],
         "std": [
             "std",
             "reYIK",
@@ -124,9 +11,9 @@
             "KAFFH",
             "module"
         ],
-        "spike_generation": [
-            "spike_generation",
-            "ScJZz",
+        "neuron": [
+            "neuron",
+            "GFYjA",
             "module"
         ],
         "neuron_tb": [
@@ -134,37 +21,147 @@
             "YAhqZ",
             "module"
         ],
-        "neuron": [
-            "neuron",
-            "GFYjA",
+        "spike_generation": [
+            "spike_generation",
+            "ScJZz",
+            "module"
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
             "module"
         ]
     },
-    "Misc": {
-        "daidir": "simv.daidir",
-        "cwd": "/afs/ece.cmu.edu/usr/ejglaser/Private/18847",
-        "csrc_abs": "/afs/ece.cmu.edu/usr/ejglaser/Private/18847/csrc",
-        "csrc": "csrc",
-        "daidir_abs": "/afs/ece.cmu.edu/usr/ejglaser/Private/18847/simv.daidir",
-        "default_output_dir": "csrc",
-        "archive_dir": "archive.7"
+    "CompileProcesses": [
+        "cgproc.18860.json"
+    ],
+    "PrevCompiledModules": {
+        "neuron": {
+            "GFYjA_d": {
+                "bytes": 8145,
+                "mode": 4,
+                "mod": "neuron",
+                "archive": "archive.20/_prev_archive_1.a",
+                "checksum": 4294967295,
+                "out": "GFYjA_d.o"
+            }
+        },
+        "std": {
+            "reYIK_d": {
+                "bytes": 28470,
+                "mode": 4,
+                "mod": "std",
+                "archive": "archive.20/_prev_archive_1.a",
+                "checksum": 4294967295,
+                "out": "reYIK_d.o"
+            }
+        },
+        "layer": {
+            "KAFFH_d": {
+                "bytes": 33967,
+                "mode": 4,
+                "mod": "layer",
+                "archive": "archive.20/_prev_archive_1.a",
+                "checksum": 4294967295,
+                "out": "KAFFH_d.o"
+            }
+        },
+        "neuron_tb": {
+            "YAhqZ_d": {
+                "bytes": 13407,
+                "mode": 4,
+                "mod": "neuron_tb",
+                "out": "YAhqZ_d.o",
+                "archive": "archive.20/_18860_archive_1.a",
+                "checksum": 4294967295
+            }
+        },
+        "spike_generation": {
+            "ScJZz_d": {
+                "bytes": 8511,
+                "mode": 4,
+                "mod": "spike_generation",
+                "archive": "archive.20/_prev_archive_1.a",
+                "checksum": 4294967295,
+                "out": "ScJZz_d.o"
+            }
+        },
+        "...MASTER...": {
+            "amcQw_d": {
+                "bytes": 8193,
+                "mode": 4,
+                "mod": "...MASTER...",
+                "out": "objs/amcQw_d.o",
+                "checksum": 4294967295
+            }
+        }
     },
-    "CompileStrategy": "fullobj",
+    "stat": {
+        "nMops": 214,
+        "ru_self_cgstart": {
+            "ru_nvcsw": 109,
+            "ru_utime_sec": 0.041001000000000003,
+            "ru_stime_sec": 0.018838000000000001,
+            "ru_nivcsw": 5,
+            "ru_maxrss_kb": 51520,
+            "ru_minflt": 12529,
+            "ru_majflt": 0
+        },
+        "Frontend(%)": 89.476900246601048,
+        "ru_childs_cgstart": {
+            "ru_nvcsw": 0,
+            "ru_utime_sec": 0.0,
+            "ru_stime_sec": 0.0,
+            "ru_nivcsw": 0,
+            "ru_maxrss_kb": 0,
+            "ru_minflt": 0,
+            "ru_majflt": 0
+        },
+        "nQuads": 120,
+        "totalObjSize": 81485,
+        "ru_self_end": {
+            "ru_nvcsw": 161,
+            "ru_utime_sec": 0.045823000000000003,
+            "ru_stime_sec": 0.027706999999999999,
+            "ru_nivcsw": 6,
+            "ru_maxrss_kb": 58512,
+            "ru_minflt": 14648,
+            "ru_majflt": 0
+        },
+        "ru_childs_end": {
+            "ru_nvcsw": 0,
+            "ru_utime_sec": 0.0,
+            "ru_stime_sec": 0.0,
+            "ru_nivcsw": 0,
+            "ru_maxrss_kb": 0,
+            "ru_minflt": 0,
+            "ru_majflt": 0
+        },
+        "outputSizePerQuad": 679.0,
+        "CodeGen(%)": 10.523099753398947
+    },
     "CurCompileModules": [
         "...MASTER...",
-        "layer"
+        "neuron_tb"
     ],
+    "CompileStrategy": "fullobj",
     "CurCompileUdps": {},
     "SIMBData": {
         "out": "amcQwB.o",
-        "bytes": 57628
+        "bytes": 59885
     },
     "LVLData": [
         "SIM"
     ],
-    "CompileStatus": "Successful",
     "PEModules": [],
-    "CompileProcesses": [
-        "cgproc.22319.json"
-    ]
+    "Misc": {
+        "cwd": "/afs/ece.cmu.edu/usr/ejglaser/Private/18847",
+        "archive_dir": "archive.20",
+        "daidir": "simv.daidir",
+        "csrc": "csrc",
+        "csrc_abs": "/afs/ece.cmu.edu/usr/ejglaser/Private/18847/csrc",
+        "daidir_abs": "/afs/ece.cmu.edu/usr/ejglaser/Private/18847/simv.daidir",
+        "default_output_dir": "csrc"
+    },
+    "CompileStatus": "Successful"
 }

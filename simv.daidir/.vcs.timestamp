@@ -33,17 +33,17 @@ https_proxy=http://proximus.ece.cmu.edu:3128/
 http_proxy=http://proximus.ece.cmu.edu:3128/
 ftp_proxy=http://proximus.ece.cmu.edu:3128/
 XMODIFIERS=@im=ibus
-XDG_VTNR=3
+XDG_VTNR=2
 XDG_SESSION_TYPE=x11
-XDG_SESSION_ID=1081
+XDG_SESSION_ID=89
 XDG_SESSION_DESKTOP=gnome-classic
 XDG_SEAT=seat0
 XDG_RUNTIME_DIR=/run/user/3278
 XDG_MENU_PREFIX=gnome-
 XDG_DATA_DIRS=/afs/ece.cmu.edu/usr/ejglaser/.local/share/flatpak/exports/share/:/var/lib/flatpak/exports/share/:/usr/local/share/:/usr/share/
 XDG_CURRENT_DESKTOP=GNOME-Classic:GNOME
-XAUTHORITY=/run/gdm/auth-for-ejglaser-lRuhrX/database
-WINDOWPATH=1:1:1:1:2:3:2:2:2:2:3:3:3:3:3
+XAUTHORITY=/run/gdm/auth-for-ejglaser-Q3iHfZ/database
+WINDOWPATH=1:1:1:2
 VTE_VERSION=5202
 VMR_MODE_FLAG=32
 VCS_VERSION=vcs-mx_vK-2015.09
@@ -63,8 +63,8 @@ SYNOPSYS_LICENSE=/afs/ece.cmu.edu/support/synopsys/license.dat
 SYNOPSYS_HOME=/afs/ece.cmu.edu/support/synopsys/synopsys.release
 SSH_AUTH_SOCK=/run/user/3278/keyring/ssh
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
-SSH_AGENT_PID=8375
-SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/8353,unix/unix:/tmp/.ICE-unix/8353
+SSH_AGENT_PID=8434
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/8413,unix/unix:/tmp/.ICE-unix/8413
 SCRNAME=vcs
 SCRIPT_NAME=vcs
 QT_PLUGIN_PATH=/usr/lib64/kde4/plugins:/usr/lib/kde4/plugins
@@ -85,8 +85,8 @@ KDEDIRS=/usr
 HTTP_PROXY=http://proximus.ece.cmu.edu:3128/
 HTTPS_PROXY=http://proximus.ece.cmu.edu:3128/
 HISTCONTROL=ignoredups
-GNOME_TERMINAL_SERVICE=:1.94
-GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/1fcfee49_e468_476e_9396_e8c6a737e293
+GNOME_TERMINAL_SERVICE=:1.113
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/afda7379_d7ce_4ad0_ad38_601627ace76c
 GNOME_SHELL_SESSION_MODE=classic
 GNOME_DESKTOP_SESSION_ID=this-is-deprecated
 GJS_DEBUG_TOPICS=JS ERROR;JS LOG
@@ -97,7 +97,7 @@ FTP_PROXY=http://proximus.ece.cmu.edu:3128/
 DESKTOP_SESSION=gnome-classic
 DC_VERSION=syn-vJ-2014.09-SP4
 DC_HOME=/afs/ece.cmu.edu/support/synopsys/synopsys.release/syn-vJ-2014.09-SP4
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-C8UIe8qTsX,guid=be298a9a9c970071e922076c5cc5f496
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-FSDmLnqNqx,guid=e7cef44b867167aba2a5d4815cc754e7
 CVS_RSH=ssh
 COLORTERM=truecolor
 BASH_FUNC_module()=() {  eval `/usr/bin/modulecmd bash $*`_}
@@ -106,9 +106,9 @@ AKLOG=/usr/bin/aklog
 7
 1556499831 internal_defines.vh
 1556500170 spike_generation.sv
-1556499862 neuron_tb.sv
+1556572204 neuron_tb.sv
 1556499848 neuron.sv
-1556500400 layer.sv
+1556504268 layer.sv
 1556500310 lateral_inhibition.sv
 1556499854 ffi.sv
 4
@@ -116,4 +116,4 @@ AKLOG=/usr/bin/aklog
 1440563255 /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/libvirsim.so
 1440562843 /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/liberrorinf.so
 1440562824 /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/libsnpsmalloc.so
-1556500403 simv.daidir
+1556572208 simv.daidir
