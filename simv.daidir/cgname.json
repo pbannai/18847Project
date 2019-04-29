@@ -1,12 +1,12 @@
 {
-    "neuron": [
-        "neuron",
-        "GFYjA",
-        "module"
-    ],
     "std": [
         "std",
         "reYIK",
+        "module"
+    ],
+    "neuron": [
+        "neuron",
+        "GFYjA",
         "module"
     ],
     "layer": [

@@ -11,7 +11,7 @@ module neuron_tb();
     neuron N0(.spikes_in, .weights, .spikes_out);
 
     integer generated_spikes, testing;
-    logic  [`num_spikes - 1:0][$clog2(`wmax):0]spike_times;
+    logic  [`num_spikes - 1:0][$clog2(`time_period):0]spike_times;
     int fill_spikes;
     initial begin
         generated_spikes = $fopen("training_spikes.txt", "r");
