@@ -5,18 +5,18 @@
 module layer(
     input logic clk, rst_l,
     input logic [$clog2(`time_period):0] time_val,
-    input logic [$clog2(`receptive_field-1:0] spike_times [$clog2(`time_period):0],
-    output logic [$clog2(`time_period):0] output_spike_time,
+    input logic [$clog2(`num_spikes)-1:0][$clog2(`time_period):0] spike_times,
+    output logic [$clog2(`time_period):0] output_spike_time
 
 
 );
+    genvar i;
 
-    logic li_output_spike_time[$clog2(`time_period)] li_output_spike_time, output_spike_time_next;
     logic [$clog2(`neurons_per_layer)-1:0] li_winning_neuron, winning_neuron_next, winning_neuron;
 
-    logic [$clog2(`neurons_per_layer)-1:0][`receptive_field-1:0][`WBITS-1:0] weights_next, weights_ff;
+    logic [$clog2(`neurons_per_layer)-1:0][`num_spikes-1:0][`WBITS-1:0] weights_next, weights_ff;
 
-    logic [$clog2(`time_period):0] li_output_spike_time, output_spike_time_next, output_spike_time_ff;
+    logic [$clog2(`time_period):0] li_output_spike_time, output_spike_time_next, output_spike_time_ff, output_spike_time_ff_next;
 
    
 
@@ -35,24 +35,24 @@ module layer(
     end
 
 
-    logic [$clog2(`receptive_field)-1:0] generated_spikes, spike_enable_l, spike_enable_inhibited;
+    logic [$clog2(`num_spikes)-1:0] generated_spikes, spike_enable_l, spike_enable_inhibited;
     logic [$clog2(`neurons_per_layer)-1:0] neuron_spikes;
 
 
 
-
-    ffi ffi1(.spikes_in(spike_enable_l), .spikes_out(spike_enable_inhibited));
+    ffi ffi1(.should_spike_in_l(spike_enable_l), .should_spike_out(spike_enable_inhibited));
 
 
 
     generate
         //spike generation
-        for(i = 0; i < `receptive_field; i++)begin
-            assign spike_enable_l[i] = spike_times[i][$clog2(`time_period)]
+        for(i = 0; i < `num_spikes; i++)begin
+            assign spike_enable_l[i] = spike_times[i][$clog2(`time_period)];
             spike_generation sg(.time_val(time_val),
-                             .should_spike(spike_enable_inhibited)
+                             .should_spike(spike_enable_inhibited[i]),
                              .spike_time(spike_times[i][$clog2(`time_period)-1:0]),
-                             .spike_val(generated_spikes[i]));
+                             .spike_val(generated_spikes[i])
+                            );
         end
     endgenerate
 
@@ -74,8 +74,9 @@ module layer(
                           .last_output_spike_time(output_spike_time_ff[$clog2(`time_period)-1:0]),
                           .last_winning_neuron(winning_neuron),
                           .output_spike(li_output_spike_time[$clog2(`time_period)]),
-                          .output_spike_time(li_output_spike_time[$clog2(`time_period)-1:0]
-                          .winning_neuron(li_winning_neuron));
+                          .output_spike_time(li_output_spike_time[$clog2(`time_period)-1:0]),
+                          .winning_neuron(li_winning_neuron)
+                           );
     
     generate
         //stdp
@@ -85,17 +86,17 @@ module layer(
                     if(neuron_spikes[i] == 1'b1)begin
                         assign weights_next[i] = `wmax;        
                     end else begin
-                        assign weights_next[i] = 0;        
+                        assign weights_next[i] = '0;        
                     end
                 end else if(neuron_spikes[i] == 1'b1)begin
                     if(neuron_spikes[i] == 1'b1)begin
-                        assign weights_next[i] = 0;
+                        assign weights_next[i] = '0;
                     end else begin
                         assign weights_next[i] = weights_ff[i];
                     end
                 end else begin
                     if(spike_times[i][$clog2(`time_period)] == 1'b0 && weights_ff[i] < `wmax )begin
-                        assign weights_next[i] = weights_ff[i] + 1;
+                        assign weights_next[i] = weights_ff[i] + '1;
                     end else begin
                         assign weights_next[i] = weights_ff[i];
                     end

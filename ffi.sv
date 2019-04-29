@@ -4,22 +4,22 @@
 
 module ffi(
 
-    input logic [`receptive_field-1:0] spikes_in,
-    output logic [`receptive_field-1:0] spikes_out
+    input logic [`num_spikes-1:0] should_spike_in_l,
+    output logic [`num_spikes-1:0] should_spike_out
 
 );
 
-    logic [$clog2(`receptive_field)-1:0] num_spikes;
+    logic [$clog2(`num_spikes)-1:0] num_spikes;
 
     always_comb begin
         num_spikes = '0;  
-        foreach(spikes_in[i]) begin
-            num_spikes += !spikes_in[i];
+        foreach(should_spike_in_l[i]) begin
+            num_spikes += !should_spike_in_l[i];
         end
         if($unsigned(num_spikes) > `ffi_max)begin
-            spikes_out = ~spikes_in;
+            should_spike_out = ~should_spike_in_l;
         end else begin
-            spikes_out = '0;
+            should_spike_out = '0;
         end
     end
 
