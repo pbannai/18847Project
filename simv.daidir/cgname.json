@@ -1,4 +1,9 @@
 {
+    "neuron": [
+        "neuron",
+        "GFYjA",
+        "module"
+    ],
     "std": [
         "std",
         "reYIK",
@@ -7,11 +12,6 @@
     "layer": [
         "layer",
         "KAFFH",
-        "module"
-    ],
-    "neuron": [
-        "neuron",
-        "GFYjA",
         "module"
     ],
     "neuron_tb": [

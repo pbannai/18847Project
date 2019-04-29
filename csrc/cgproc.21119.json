@@ -1,0 +1,21 @@
+{
+    "Modules": {
+        "...MASTER...": {},
+        "std": {},
+        "spike_generation": {},
+        "layer": {},
+        "neuron_tb": {},
+        "neuron": {}
+    },
+    "CompUnits": {
+        "amcQw_d": {
+            "mod": "...MASTER...",
+            "checksum": 4294967295,
+            "out": "objs/amcQw_d.o",
+            "bytes": 8193,
+            "mode": 4
+        }
+    },
+    "reusePaths": {},
+    "ObjArchives": []
+}
