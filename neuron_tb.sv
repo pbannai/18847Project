@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
-
-`include "define.vh"
+ `default_nettype none
+`include "internal_defines.vh"
 
 module neuron_tb();
 

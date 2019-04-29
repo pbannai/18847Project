@@ -1,11 +1,11 @@
 `timescale 1ns/1ps
-
-`include "define.vh"
+ `default_nettype none
+`include "internal_defines.vh"
 
 module spike_generation(
     input logic should_spike,
-    input logic [$clog2(`time_period)-1:0] time_val,
-    input logic [$clog2(`time_period)-1:0] spike_time,
+    input logic [$clog2(`time_period):0] time_val,
+    input logic [$clog2(`time_period):0] spike_time,
     output logic spike_val
 
 );
