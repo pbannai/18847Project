@@ -38,7 +38,7 @@ module layer(
     logic [`num_spikes-1:0] generated_spikes, spike_enable_l, spike_enable_inhibited;
     logic [`neurons_per_layer-1:0] neuron_spikes;
 
-
+ 
 
     ffi ffi1(.should_spike_in_l(spike_enable_l), .should_spike_out(spike_enable_inhibited));
 
@@ -77,38 +77,38 @@ module layer(
                           .output_spike_time(li_output_spike_time[`log_time_period-1:0]),
                           .winning_neuron(li_winning_neuron)
                            );
-    
+    logic debugging;
     always_comb begin
+         debugging = 0;
         //stdp
         if(training == 1'b1 && time_val == `time_period - 1)begin
-		for(int stdp_neuron = 0; stdp_neuron < `neurons_per_layer; stdp_neuron++)begin
-		    if(time_val == `time_period - 1)begin
-		        if(winning_neuron == stdp_neuron)begin
-		            if(neuron_spikes[stdp_neuron] == 1'b1)begin
-		                weights_next[stdp_neuron] = `wmax;        
-		            end else begin
-		                weights_next[stdp_neuron] = '0;        
-		            end
-		        end else if(neuron_spikes[stdp_neuron] == 1'b1)begin
-		            if(neuron_spikes[stdp_neuron] == 1'b1)begin
-		                weights_next[stdp_neuron] = '0;
-		            end else begin
-		                weights_next[stdp_neuron] = weights_ff[stdp_neuron];
-		            end
-		        end else begin
-		            if(spike_times[stdp_neuron][`log_time_period] == 1'b0 && weights_ff[stdp_neuron] < `wmax )begin
-		                weights_next[stdp_neuron] = weights_ff[stdp_neuron] + '1;
-		            end else begin
-		                weights_next[stdp_neuron] = weights_ff[stdp_neuron];
-		            end
-		        end
-		    end else begin
-		        weights_next[stdp_neuron] = weights_ff[stdp_neuron];
-		    end
-		end
-	end else begin
-		weights_next = weights_ff;
-	end
+            for(int stdp_neuron = 0; stdp_neuron < `neurons_per_layer; stdp_neuron++)begin
+                for(int spike = 0; spike < `num_spikes; spike++)begin
+                    if(winning_neuron == stdp_neuron)begin
+                        if(generated_spikes[spike] == 1'b1)begin
+                            debugging = 1;
+                            weights_next[stdp_neuron][spike] = `wmax;        
+                        end else begin
+                            weights_next[stdp_neuron][spike] = '0;        
+                        end
+                    end else if(neuron_spikes[stdp_neuron] == 1'b1)begin
+                        if(generated_spikes[spike] == 1'b1)begin
+                            weights_next[stdp_neuron][spike] = '0;
+                        end else begin
+                            weights_next[stdp_neuron][spike] = weights_ff[stdp_neuron][spike];
+                        end
+                    end else begin
+                        if(generated_spikes[spike] == 1'b1 && weights_ff[stdp_neuron][spike] < `wmax )begin
+                            weights_next[stdp_neuron][spike] = weights_ff[stdp_neuron][spike] + '1;
+                        end else begin
+                            weights_next[stdp_neuron][spike] = weights_ff[stdp_neuron][spike];
+                        end
+                    end
+                end
+            end
+		end else begin
+            weights_next = weights_ff;
+        end
 
         if(time_val == `time_period - 1)begin
             output_spike_time_next = -1;
