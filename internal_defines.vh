@@ -8,7 +8,7 @@
 `define  log_num_spikes		3
 `define  neurons_per_layer     16
 `define  log_neurons_per_layer  4
-`define  THRESHOLD              2
+`define  THRESHOLD              14
 `define  WBITS                  3    
 `define  wmax                   7
  

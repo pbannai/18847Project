@@ -1,13 +1,13 @@
 # Begin_DVE_Session_Save_Info
 # DVE full session
-# Saved on Wed May 8 15:28:38 2019
+# Saved on Wed May 8 15:57:16 2019
 # Designs open: 1
 #   Sim: /afs/ece.cmu.edu/usr/ejglaser/Private/18847/simv
 # Toplevel windows open: 1
 # 	TopLevel.1
 #   Source.1: layer_tb
 #   Group count = 2
-#   Group Group1 signal count = 1
+#   Group Group1 signal count = 7
 #   Group Group2 signal count = 1
 # End_DVE_Session_Save_Info
 
@@ -114,23 +114,23 @@ gui_show_toolbar -toolbar {Testbench}
 # End ToolBar settings
 
 # Docked window settings
-set HSPane.1 [gui_create_window -type HSPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 409]
+set HSPane.1 [gui_create_window -type HSPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 405]
 catch { set Hier.1 [gui_share_window -id ${HSPane.1} -type Hier] }
-gui_set_window_pref_key -window ${HSPane.1} -key dock_width -value_type integer -value 409
+gui_set_window_pref_key -window ${HSPane.1} -key dock_width -value_type integer -value 405
 gui_set_window_pref_key -window ${HSPane.1} -key dock_height -value_type integer -value -1
 gui_set_window_pref_key -window ${HSPane.1} -key dock_offset -value_type integer -value 0
-gui_update_layout -id ${HSPane.1} {{left 0} {top 0} {width 408} {height 902} {dock_state left} {dock_on_new_line true} {child_hier_colhier 271} {child_hier_coltype 128} {child_hier_colpd 0} {child_hier_col1 0} {child_hier_col2 1} {child_hier_col3 -1}}
-set DLPane.1 [gui_create_window -type DLPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 276]
+gui_update_layout -id ${HSPane.1} {{left 0} {top 0} {width 404} {height 906} {dock_state left} {dock_on_new_line true} {child_hier_colhier 271} {child_hier_coltype 128} {child_hier_colpd 0} {child_hier_col1 0} {child_hier_col2 1} {child_hier_col3 -1}}
+set DLPane.1 [gui_create_window -type DLPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 272]
 catch { set Data.1 [gui_share_window -id ${DLPane.1} -type Data] }
-gui_set_window_pref_key -window ${DLPane.1} -key dock_width -value_type integer -value 276
-gui_set_window_pref_key -window ${DLPane.1} -key dock_height -value_type integer -value 901
+gui_set_window_pref_key -window ${DLPane.1} -key dock_width -value_type integer -value 272
+gui_set_window_pref_key -window ${DLPane.1} -key dock_height -value_type integer -value 905
 gui_set_window_pref_key -window ${DLPane.1} -key dock_offset -value_type integer -value 0
-gui_update_layout -id ${DLPane.1} {{left 0} {top 0} {width 275} {height 902} {dock_state left} {dock_on_new_line true} {child_data_colvariable 271} {child_data_colvalue 100} {child_data_coltype 45} {child_data_col1 0} {child_data_col2 1} {child_data_col3 2}}
-set Console.1 [gui_create_window -type Console -parent ${TopLevel.1} -dock_state bottom -dock_on_new_line true -dock_extent 364]
+gui_update_layout -id ${DLPane.1} {{left 0} {top 0} {width 271} {height 906} {dock_state left} {dock_on_new_line true} {child_data_colvariable 271} {child_data_colvalue 100} {child_data_coltype 45} {child_data_col1 0} {child_data_col2 1} {child_data_col3 2}}
+set Console.1 [gui_create_window -type Console -parent ${TopLevel.1} -dock_state bottom -dock_on_new_line true -dock_extent 360]
 gui_set_window_pref_key -window ${Console.1} -key dock_width -value_type integer -value 2559
-gui_set_window_pref_key -window ${Console.1} -key dock_height -value_type integer -value 364
+gui_set_window_pref_key -window ${Console.1} -key dock_height -value_type integer -value 360
 gui_set_window_pref_key -window ${Console.1} -key dock_offset -value_type integer -value 0
-gui_update_layout -id ${Console.1} {{left 0} {top 0} {width 2559} {height 363} {dock_state bottom} {dock_on_new_line true}}
+gui_update_layout -id ${Console.1} {{left 0} {top 0} {width 2559} {height 359} {dock_state bottom} {dock_on_new_line true}}
 #### Start - Readjusting docked view's offset / size
 set dockAreaList { top left right bottom }
 foreach dockArea $dockAreaList {
@@ -200,20 +200,21 @@ gui_set_time_units 1ps
 # Global: Signal Compare
 
 # Global: Signal Groups
-gui_load_child_values {layer_tb}
+gui_load_child_values {layer_tb.L0}
+gui_load_child_values {layer_tb.L0.li}
 
 
-set _session_group_3 Group1
-gui_sg_create "$_session_group_3"
-set Group1 "$_session_group_3"
+set _session_group_17 Group1
+gui_sg_create "$_session_group_17"
+set Group1 "$_session_group_17"
 
-gui_sg_addsignal -group "$_session_group_3" { layer_tb.winning_neuron }
+gui_sg_addsignal -group "$_session_group_17" { layer_tb.winning_neuron layer_tb.L0.li.spike_volley layer_tb.spike_times layer_tb.L0.spike_times layer_tb.L0.generated_spikes layer_tb.time_val layer_tb.clk }
 
-set _session_group_4 Group2
-gui_sg_create "$_session_group_4"
-set Group2 "$_session_group_4"
+set _session_group_18 Group2
+gui_sg_create "$_session_group_18"
+set Group2 "$_session_group_18"
 
-gui_sg_addsignal -group "$_session_group_4" { layer_tb.L0.li_winning_neuron }
+gui_sg_addsignal -group "$_session_group_18" { layer_tb.time_val }
 
 # Global: Highlighting
 
@@ -223,7 +224,7 @@ gui_change_stack_mode -mode list
 # Post database loading setting...
 
 # Restore C1 time
-gui_set_time -C1_only 5600005000
+gui_set_time -C1_only 1511621273
 
 
 
@@ -248,17 +249,13 @@ gui_list_set_filter -id ${Hier.1} -list { {Package 1} {All 0} {Process 1} {VirtP
 gui_list_set_filter -id ${Hier.1} -text {*}
 gui_hier_list_init -id ${Hier.1}
 gui_change_design -id ${Hier.1} -design Sim
-catch {gui_list_expand -id ${Hier.1} layer_tb}
-catch {gui_list_select -id ${Hier.1} {layer_tb.L0}}
 gui_view_scroll -id ${Hier.1} -vertical -set 0
 gui_view_scroll -id ${Hier.1} -horizontal -set 0
 
 # Data 'Data.1'
 gui_list_set_filter -id ${Data.1} -list { {Buffer 1} {Input 1} {Others 1} {Linkage 1} {Output 1} {LowPower 1} {Parameter 1} {All 1} {Aggregate 1} {LibBaseMember 1} {Event 1} {Assertion 1} {Constant 1} {Interface 1} {BaseMembers 1} {Signal 1} {$unit 1} {Inout 1} {Variable 1} }
 gui_list_set_filter -id ${Data.1} -text {*}
-gui_list_show_data -id ${Data.1} {layer_tb.L0}
-gui_show_window -window ${Data.1}
-catch { gui_list_select -id ${Data.1} {layer_tb.L0.li_winning_neuron }}
+gui_list_show_data -id ${Data.1} {layer_tb}
 gui_view_scroll -id ${Data.1} -vertical -set 0
 gui_view_scroll -id ${Data.1} -horizontal -set 0
 gui_view_scroll -id ${Hier.1} -vertical -set 0

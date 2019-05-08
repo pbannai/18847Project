@@ -50,7 +50,7 @@ module layer(
             assign spike_enable_l[i] = spike_times[i][`log_time_period];
             spike_generation sg(.time_val(time_val),
                              .should_spike(spike_enable_inhibited[i]),
-                             .spike_time(spike_times[i][`log_time_period:0]),
+                             .spike_time(spike_times[i][`log_time_period-1:0]),
                              .spike_val(generated_spikes[i])
                             );
         end
@@ -80,7 +80,7 @@ module layer(
     
     always_comb begin
         //stdp
-        if(training == 1'b1)begin
+        if(training == 1'b1 && time_val == `time_period - 1)begin
 		for(int stdp_neuron = 0; stdp_neuron < `neurons_per_layer; stdp_neuron++)begin
 		    if(time_val == `time_period - 1)begin
 		        if(winning_neuron == stdp_neuron)begin
@@ -109,18 +109,15 @@ module layer(
 	end else begin
 		weights_next = weights_ff;
 	end
-    end
 
-
-    always_comb begin
         if(time_val == `time_period - 1)begin
-            output_spike_time_next = li_output_spike_time;
+            output_spike_time_next = -1;
             output_spike_time_ff_next = `time_period - 1;
-            winning_neuron_next = '0;
+            winning_neuron_next = -1;
         end else begin
-            output_spike_time_next = output_spike_time;
+            output_spike_time_next = li_output_spike_time;
             output_spike_time_ff_next = li_output_spike_time;
-            winning_neuron_next = li_winning_neuron;;
+            winning_neuron_next = li_winning_neuron;
 
         end
     end

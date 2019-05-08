@@ -6,12 +6,11 @@ module layer_tb();
 
     integer testing_spikes_fd, training_spikes_fd, testing_results_fd;
     int i;
-    logic [`num_spikes-1:0] spikes_in;
-    logic [`num_spikes-1:0][`WBITS-1:0] weights;
+
     logic clk, rst_l, training;
 
 
-    logic  [`num_spikes - 1:0][`log_time_period:0]spike_times, output_spike_times;
+    logic  [`num_spikes - 1:0][`log_time_period:0] spike_times;
 
     logic [`log_neurons_per_layer:0] winning_neuron;
     logic [`log_time_period:0] time_val, time_val_next;

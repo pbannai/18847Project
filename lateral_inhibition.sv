@@ -20,9 +20,9 @@ module lateral_inhibition(
         output_spike_time = '0;
         output_spike = 1'b0;
         winning_neuron = '0;
-        if(last_output_spike == 1'b0)begin
+        if(last_winning_neuron == -1)begin
             foreach(spike_volley[i]) begin
-                if(last_winning_neuron == -1)begin
+                if(spike_volley[i] == 1'b1)begin
                     output_spike_time = time_val;
                     output_spike = 1'b0;
                     winning_neuron = i;                   

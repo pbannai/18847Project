@@ -6,24 +6,25 @@ gui_state_default_create -off -ini
 gui_set_state_value -category Globals -key recent_databases -value {{gui_open_db -file /afs/ece.cmu.edu/usr/ejglaser/Private/18847/lab4/bitonic_sort_16.vcd -design V1 -from 0 -to 54000} {gui_open_db -file /afs/ece.cmu.edu/usr/ejglaser/Private/18847/lab4/bitonic_sort_16.vcd -design V2 -from 0 -to 100} {gui_open_db -file /afs/ece.cmu.edu/usr/ejglaser/Private/18847/lab4/bitonic_sort_16.vcd -design V1} {gui_open_db -file /afs/ece.cmu.edu/usr/ejglaser/Private/18847/lab4/bitonic_sort_16.vcd -design V1 -from 0 -to 100} {gui_open_db -file /afs/ece.cmu.edu/usr/ejglaser/Private/18847 - Neuromorphic Comparch/18847_lab4/bitonic_sort_16.vcd -design V2 -from 0 -to 100}}
 gui_set_state_value -category Globals -key recent_sessions -value {{gui_load_session -ignore_errors -file /afs/ece.cmu.edu/usr/ejglaser/Private/18847/lab4/DVEfiles//crash_03.20-21.21/dve_session03.20-21.21.tcl}}
 gui_set_state_value -category Layout -key child_console_size_x -value 2559
-gui_set_state_value -category Layout -key child_console_size_y -value 364
+gui_set_state_value -category Layout -key child_console_size_y -value 360
 gui_set_state_value -category Layout -key child_data_coltype -value 45
 gui_set_state_value -category Layout -key child_data_colvariable -value 271
-gui_set_state_value -category Layout -key child_data_size_x -value 276
-gui_set_state_value -category Layout -key child_data_size_y -value 901
+gui_set_state_value -category Layout -key child_data_size_x -value 272
+gui_set_state_value -category Layout -key child_data_size_y -value 905
 gui_set_state_value -category Layout -key child_driver_size_x -value 1151
 gui_set_state_value -category Layout -key child_driver_size_y -value 179
 gui_set_state_value -category Layout -key child_hier_col3 -value {-1}
-gui_set_state_value -category Layout -key child_hier_colhier -value 164
+gui_set_state_value -category Layout -key child_hier_colhier -value 271
 gui_set_state_value -category Layout -key child_hier_colpd -value 0
-gui_set_state_value -category Layout -key child_hier_size_x -value 193
-gui_set_state_value -category Layout -key child_hier_size_y -value 901
+gui_set_state_value -category Layout -key child_hier_coltype -value 128
+gui_set_state_value -category Layout -key child_hier_size_x -value 405
+gui_set_state_value -category Layout -key child_hier_size_y -value 905
 gui_set_state_value -category Layout -key child_hier_sort_order -value 1
 gui_set_state_value -category Layout -key child_source_docknewline -value false
 gui_set_state_value -category Layout -key child_source_pos_x -value {-2}
 gui_set_state_value -category Layout -key child_source_pos_y -value {-15}
-gui_set_state_value -category Layout -key child_source_size_x -value 2093
-gui_set_state_value -category Layout -key child_source_size_y -value 896
+gui_set_state_value -category Layout -key child_source_size_x -value 1885
+gui_set_state_value -category Layout -key child_source_size_y -value 900
 gui_set_state_value -category Layout -key child_wave_colname -value 369
 gui_set_state_value -category Layout -key child_wave_colvalue -value 369
 gui_set_state_value -category Layout -key child_wave_left -value 743
@@ -66,60 +67,551 @@ gui_sim_run Ucli -exe ./simv -args {-ucligui  } -dir .
 gui_list_select -id Data.1 -selected  { {layer_tb.winning_neuron[4:0]}   }
 gui_open_window Wave
 gui_list_add -id Wave.1 -from Data.1 { {layer_tb.winning_neuron[4:0]} } -insertionbar
+gui_wv_zoom_timerange -id  Wave.1 0 597
 gui_sim_continue  
 gui_zoom -window Wave.1 -full
-gui_wv_zoom_timerange -id  Wave.1 0 53154710
-gui_wv_zoom_timerange -id  Wave.1 0 178073
-gui_view_port_history -window Wave.1 -previous
-gui_close_window -window TopLevel.2
+gui_wv_zoom_timerange -id  Wave.1 1025573222 1294473518
+gui_wv_zoom_timerange -id  Wave.1 1075751324 1088513203
+gui_wv_zoom_timerange -id  Wave.1 1078140069 1078346710
+gui_wv_scroll_hslidermove -id  Wave.1 0
+gui_list_select -id Data.1 -selected  {  }
+gui_list_select -id Data.1 -selected  { {layer_tb.time_val[3:0]}   }
 gui_list_expand -id  Hier.1   layer_tb
 gui_list_expand -id  Hier.1   layer_tb.L0
-gui_list_select -id Hier.1 -current_item_name layer_tb.L0.ffi1 -current_item_type Scope  -selected  { layer_tb.L0.ffi1   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk1[0].sg} -current_item_type Scope  -selected  { {layer_tb.L0.genblk1[0].sg}   }
-gui_list_select -id Hier.1 -current_item_name layer_tb.L0.ffi1 -current_item_type Scope  -selected  { layer_tb.L0.ffi1   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk1[0].sg} -current_item_type Scope  -selected  { {layer_tb.L0.genblk1[0].sg}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk1[1].sg} -current_item_type Scope  -selected  { {layer_tb.L0.genblk1[1].sg}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk1[2].sg} -current_item_type Scope  -selected  { {layer_tb.L0.genblk1[2].sg}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk1[3].sg} -current_item_type Scope  -selected  { {layer_tb.L0.genblk1[3].sg}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk1[4].sg} -current_item_type Scope  -selected  { {layer_tb.L0.genblk1[4].sg}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk1[5].sg} -current_item_type Scope  -selected  { {layer_tb.L0.genblk1[5].sg}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk1[6].sg} -current_item_type Scope  -selected  { {layer_tb.L0.genblk1[6].sg}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk1[7].sg} -current_item_type Scope  -selected  { {layer_tb.L0.genblk1[7].sg}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk2[0].n} -current_item_type Scope  -selected  { {layer_tb.L0.genblk2[0].n}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk2[1].n} -current_item_type Scope  -selected  { {layer_tb.L0.genblk2[1].n}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk2[2].n} -current_item_type Scope  -selected  { {layer_tb.L0.genblk2[2].n}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk2[3].n} -current_item_type Scope  -selected  { {layer_tb.L0.genblk2[3].n}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk2[4].n} -current_item_type Scope  -selected  { {layer_tb.L0.genblk2[4].n}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk2[5].n} -current_item_type Scope  -selected  { {layer_tb.L0.genblk2[5].n}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk2[6].n} -current_item_type Scope  -selected  { {layer_tb.L0.genblk2[6].n}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk2[7].n} -current_item_type Scope  -selected  { {layer_tb.L0.genblk2[7].n}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk2[8].n} -current_item_type Scope  -selected  { {layer_tb.L0.genblk2[8].n}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk2[9].n} -current_item_type Scope  -selected  { {layer_tb.L0.genblk2[9].n}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk2[10].n} -current_item_type Scope  -selected  { {layer_tb.L0.genblk2[10].n}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk2[11].n} -current_item_type Scope  -selected  { {layer_tb.L0.genblk2[11].n}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk2[12].n} -current_item_type Scope  -selected  { {layer_tb.L0.genblk2[12].n}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk2[13].n} -current_item_type Scope  -selected  { {layer_tb.L0.genblk2[13].n}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk2[14].n} -current_item_type Scope  -selected  { {layer_tb.L0.genblk2[14].n}   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.genblk2[15].n} -current_item_type Scope  -selected  { {layer_tb.L0.genblk2[15].n}   }
 gui_list_select -id Hier.1 -current_item_name layer_tb.L0.li -current_item_type Scope  -selected  { layer_tb.L0.li   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.unnamed$$_5} -current_item_type Scope  -selected  { {layer_tb.L0.unnamed$$_5}   }
-gui_list_select -id Hier.1 -current_item_name layer_tb.L0.li -current_item_type Scope  -selected  { layer_tb.L0.li   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.unnamed$$_5} -current_item_type Scope  -selected  { {layer_tb.L0.unnamed$$_5}   }
-gui_list_select -id Hier.1 -current_item_name layer_tb.L0.li -current_item_type Scope  -selected  { layer_tb.L0.li   }
-gui_list_expand -id  Hier.1   layer_tb.L0.li
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.unnamed$$_5} -current_item_type Scope  -selected  { {layer_tb.L0.unnamed$$_5}   }
-gui_list_select -id Hier.1 -current_item_name layer_tb.L0.li -current_item_type Scope  -selected  { layer_tb.L0.li   }
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.unnamed$$_5} -current_item_type Scope  -selected  { {layer_tb.L0.unnamed$$_5}   }
-gui_list_select -id Hier.1 -current_item_name layer_tb.L0.li -current_item_type Scope  -selected  { layer_tb.L0.li   }
-gui_list_collapse -id  Hier.1   layer_tb.L0.li
-gui_list_select -id Hier.1 -current_item_name {layer_tb.L0.unnamed$$_5} -current_item_type Scope  -selected  { {layer_tb.L0.unnamed$$_5}   }
+gui_list_select -id Data.1 -selected  { {layer_tb.L0.li.spike_volley[15:0]}   }
+gui_list_add -id Wave.1 -from Data.1 { {layer_tb.L0.li.spike_volley[15:0]} } -insertionbar
+gui_set_env SIMSETUP::SIMCURRENTDIR /afs/ece.cmu.edu/usr/ejglaser/Private/18847
+gui_sim_restart -build /afs/ece.cmu.edu/usr/ejglaser/Private/18847/simv.daidir/vcs_rebuild
+gui_sim_continue  
+gui_list_expand -id  Wave.1   {layer_tb.L0.li.spike_volley[15:0]}
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_zoom -window Wave.1 -full
+gui_zoom -window Wave.1 -full
+gui_marker_move -id  Wave.1 C1 2810946117
+gui_marker_move -id  Wave.1 C1 1034953465
+gui_list_select -id Hier.1 -current_item_name layer_tb -current_item_type Scope  -selected  { layer_tb   }
+gui_list_select -id Data.1 -selected  { {layer_tb.spike_times[7:0][3:0]}   }
+gui_list_add -id Wave.1 -from Data.1 { {layer_tb.spike_times[7:0][3:0]} } -insertionbar
+gui_list_collapse -id  Wave.1   {layer_tb.L0.li.spike_volley[15:0]}
+gui_marker_move -id  Wave.1 C1 362702725
+gui_sim_restart
+gui_sim_restart -build /afs/ece.cmu.edu/usr/ejglaser/Private/18847/simv.daidir/vcs_rebuild
+gui_sim_continue  
+gui_list_expand -id  Wave.1   {layer_tb.spike_times[7:0][3:0]}
+gui_wv_zoom_timerange -id  Wave.1 3561365547 4127306868
+gui_wv_zoom_timerange -id  Wave.1 3623794009 3671192779
+gui_wv_zoom_timerange -id  Wave.1 3630227068 3633191146
+gui_wv_zoom_timerange -id  Wave.1 3630694343 3630702618
+gui_wv_zoom_timerange -id  Wave.1 3630694802 3630695666
+gui_wv_zoom_timerange -id  Wave.1 3630694905 3630695003
+gui_wv_zoom_timerange -id  Wave.1 1965416999 2057794783
+gui_wv_zoom_timerange -id  Wave.1 1983620780 1985787093
+gui_wv_zoom_timerange -id  Wave.1 1984008871 1984098378
+gui_list_select -id Data.1 -selected  { layer_tb.clk   }
+gui_list_add -id Wave.1 -from Data.1 { layer_tb.clk } -insertionbar
+gui_sim_restart -build /afs/ece.cmu.edu/usr/ejglaser/Private/18847/simv.daidir/vcs_rebuild
+gui_sim_continue  
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_zoom_timerange -id  Wave.1 2309444610 2430491362
+gui_wv_zoom_timerange -id  Wave.1 2349564091 2356119945
+gui_wv_zoom_timerange -id  Wave.1 2351750648 2352116692
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel -.2
+gui_sim_restart -build /afs/ece.cmu.edu/usr/ejglaser/Private/18847/simv.daidir/vcs_rebuild
+gui_sim_continue  
+gui_sim_restart -build /afs/ece.cmu.edu/usr/ejglaser/Private/18847/simv.daidir/vcs_rebuild
+gui_sim_continue  
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_zoom -window Wave.1 -full
+gui_list_collapse -id  Wave.1   {layer_tb.spike_times[7:0][3:0]}
+gui_list_expand -id  Wave.1   {layer_tb.L0.li.spike_volley[15:0]}
+gui_list_collapse -id  Wave.1   {layer_tb.L0.li.spike_volley[15:0]}
+gui_list_expand -id  Hier.1   layer_tb
 gui_list_select -id Hier.1 -current_item_name layer_tb.L0 -current_item_type Scope  -selected  { layer_tb.L0   }
-gui_list_select -id Data.1 -selected  { {layer_tb.L0.li_winning_neuron[4:0]}   }
-gui_open_window Wave
-gui_list_add -id Wave.1 -from Data.1 { {layer_tb.L0.li_winning_neuron[4:0]} } -insertionbar
-gui_wv_zoom_timerange -id  Wave.1 0 597
+gui_list_select -id Data.1 -selected  { {layer_tb.L0.time_val[3:0]}   }
+gui_list_select -id Data.1 -selected  { {layer_tb.L0.spike_times[7:0][3:0]}   }
+gui_list_add -id Wave.1 -from Data.1 { {layer_tb.L0.spike_times[7:0][3:0]} } -insertionbar
+gui_list_select -id Wave.1 -selected  { {layer_tb.L0.spike_times[7:0][3:0]}   }
+gui_list_move  -id  Wave.1    -sid  Wave.1   -after {layer_tb.spike_times[7:0][3:0]} {{layer_tb.L0.spike_times[7:0][3:0]}} 
 gui_sim_restart
 gui_sim_continue  
-gui_wv_zoom_timerange -id  Wave.1 0 3274633185
-gui_wv_zoom_timerange -id  Wave.1 0 4402279243
+gui_marker_move -id  Wave.1 C1 3495685000
+gui_marker_move -id  Wave.1 C1 3626965000
+gui_list_select -id Data.1 -selected  { {layer_tb.L0.generated_spikes[7:0]}   }
+gui_list_add -id Wave.1 -from Data.1 { {layer_tb.L0.generated_spikes[7:0]} } -insertionbar
+gui_sim_restart
+gui_sim_continue  
+gui_marker_move -id  Wave.1 C1 4008485000
+gui_marker_move -id  Wave.1 C1 3842005000
+gui_wv_zoom_timerange -id  Wave.1 3667674966 4439981630
+gui_wv_zoom_timerange -id  Wave.1 3785208206 3889562317
+gui_wv_zoom_timerange -id  Wave.1 3802603208 3809711640
+gui_marker_move -id  Wave.1 C1 3805805000
+gui_marker_move -id  Wave.1 C1 3805765000
+gui_marker_select -id  Wave.1 { C1 }
+gui_marker_move -id  Wave.1 C1 3805805000
+gui_marker_move -id  Wave.1 C1 3805765000
+gui_wv_zoom_timerange -id  Wave.1 3803808884 3805090862
+gui_wv_zoom_timerange -id  Wave.1 3804137652 3804373147
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_marker_move -id  Wave.1 C1 3805262854
+gui_wv_zoom_timerange -id  Wave.1 270762471 1987715085
+gui_wv_zoom_timerange -id  Wave.1 384420993 547392486
+gui_wv_zoom_timerange -id  Wave.1 409567108 423671285
+gui_wv_zoom_timerange -id  Wave.1 410824515 411690768
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel .2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_scroll -window Wave.1 -hrel -.2
+gui_list_expand -id  Wave.1   {layer_tb.L0.generated_spikes[7:0]}
+gui_list_expand -id  Wave.1   {layer_tb.L0.spike_times[7:0][3:0]}
+gui_list_select -id Wave.1 -selected  { {layer_tb.L0.spike_times[0][3:0]}   }
+gui_list_expand -id  Wave.1   {layer_tb.L0.spike_times[0][3:0]}
+gui_list_collapse -id  Wave.1   {layer_tb.L0.spike_times[0][3:0]}
+gui_list_select -id Hier.1 -current_item_name layer_tb -current_item_type Scope  -selected  { layer_tb   }
+gui_list_select -id Data.1 -selected  { {layer_tb.time_val[3:0]}   }
+gui_open_window Wave
+gui_list_add -id Wave.2 -from Data.1 { {layer_tb.time_val[3:0]} } -insertionbar
+gui_wv_zoom_timerange -id  Wave.2 0 597
+gui_close_window -window TopLevel.3
+gui_list_add -id Wave.1 -from Data.1 { {layer_tb.time_val[3:0]} } -insertionbar
+gui_marker_move -id  Wave.1 C1 411495000
+gui_marker_move -id  Wave.1 C1 411168849
+gui_marker_move -id  Wave.1 C1 411165463
+gui_marker_move -id  Wave.1 C1 411131122
+gui_marker_move -id  Wave.1 C1 411119998
+gui_marker_move -id  Wave.1 C1 411121449
+gui_sim_restart -build /afs/ece.cmu.edu/usr/ejglaser/Private/18847/simv.daidir/vcs_rebuild
+gui_sim_continue  
+gui_list_collapse -id  Wave.1   {layer_tb.L0.generated_spikes[7:0]}
+gui_zoom -window Wave.1 -full
+gui_wv_zoom_timerange -id  Wave.1 1428923666 2098047658
+gui_wv_zoom_timerange -id  Wave.1 1649833361 1692424167
+gui_wv_zoom_timerange -id  Wave.1 1658068876 1658187779
+gui_zoom -window Wave.1 -full
+gui_wv_zoom_timerange -id  Wave.1 1932330034 2107427901
+gui_wv_zoom_timerange -id  Wave.1 1988744171 2002724626
+gui_wv_zoom_timerange -id  Wave.1 1991594265 1992047010
+gui_wv_zoom_timerange -id  Wave.1 1991836839 1991898014
+gui_sim_restart -build /afs/ece.cmu.edu/usr/ejglaser/Private/18847/simv.daidir/vcs_rebuild
+gui_sim_restart -build /afs/ece.cmu.edu/usr/ejglaser/Private/18847/simv.daidir/vcs_rebuild
+gui_marker_move -id  Wave.1 C1 5599992359
+gui_sim_restart -build /afs/ece.cmu.edu/usr/ejglaser/Private/18847/simv.daidir/vcs_rebuild
+gui_sim_continue  
+gui_zoom -window Wave.1 -full
+gui_wv_zoom_timerange -id  Wave.1 1457064394 1757232166
+gui_wv_zoom_timerange -id  Wave.1 1508380764 1521956191
+gui_wv_zoom_timerange -id  Wave.1 1511268683 1512140360
+gui_list_collapse -id  Wave.1   {layer_tb.L0.spike_times[7:0][3:0]}
+gui_list_expand -id  Wave.1   {layer_tb.L0.spike_times[7:0][3:0]}
+gui_list_collapse -id  Wave.1   {layer_tb.L0.spike_times[7:0][3:0]}
+gui_list_expand -id  Wave.1   {layer_tb.L0.spike_times[7:0][3:0]}
+gui_list_collapse -id  Wave.1   {layer_tb.L0.spike_times[7:0][3:0]}
+gui_list_expand -id  Wave.1   {layer_tb.L0.spike_times[7:0][3:0]}
+gui_list_collapse -id  Wave.1   {layer_tb.L0.spike_times[7:0][3:0]}
+gui_list_expand -id  Wave.1   {layer_tb.L0.spike_times[7:0][3:0]}
+gui_list_collapse -id  Wave.1   {layer_tb.L0.spike_times[7:0][3:0]}
+gui_list_select -id Wave.1 -selected  { {layer_tb.L0.generated_spikes[7:0]}   }
+gui_list_select -id Wave.1 -selected  { {layer_tb.L0.spike_times[7:0][3:0]}   }
+gui_list_expand -id  Wave.1   {layer_tb.L0.spike_times[7:0][3:0]}
+gui_marker_move -id  Wave.1 C1 1511557516
+gui_marker_move -id  Wave.1 C1 1511544375
+gui_list_expand -id  Wave.1   {layer_tb.L0.generated_spikes[7:0]}
+gui_marker_move -id  Wave.1 C1 1511621273
+gui_list_select -id Wave.1 -selected  { {layer_tb.L0.spike_times[0][3:0]}   }
+gui_list_select -id Wave.1 -selected  { {layer_tb.L0.spike_times[1][3:0]}   }
 gui_close_window -window TopLevel.2

@@ -6,4 +6,4 @@ SystemC=FALSE
 UUM=FALSE
 KDB=FALSE
 USE_NOVAS_HOME=FALSE
-TOP=layer_tb neuron_tb 
+TOP=layer_tb 
