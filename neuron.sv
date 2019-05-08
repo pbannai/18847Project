@@ -20,7 +20,7 @@ module neuron(
         end
     end
 
-    assign spikes_out = (sum > `THRESHOLD) ? 1'b1 : 1'b0;
+    assign spikes_out = (sum >= `THRESHOLD) ? 1'b1 : 1'b0;
 
 endmodule
 
