@@ -1,0 +1,8 @@
+/afs/ece.cmu.edu/usr/ejglaser/Private/18847/ffi.sv
+/afs/ece.cmu.edu/usr/ejglaser/Private/18847/internal_defines.vh
+/afs/ece.cmu.edu/usr/ejglaser/Private/18847/lateral_inhibition.sv
+/afs/ece.cmu.edu/usr/ejglaser/Private/18847/layer.sv
+/afs/ece.cmu.edu/usr/ejglaser/Private/18847/layer_tb.sv
+/afs/ece.cmu.edu/usr/ejglaser/Private/18847/neuron.sv
+/afs/ece.cmu.edu/usr/ejglaser/Private/18847/neuron_tb.sv
+/afs/ece.cmu.edu/usr/ejglaser/Private/18847/spike_generation.sv

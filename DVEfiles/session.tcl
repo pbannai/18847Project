@@ -1,6 +1,6 @@
 # Begin_DVE_Session_Save_Info
 # DVE full session
-# Saved on Wed May 8 15:12:06 2019
+# Saved on Wed May 8 15:28:38 2019
 # Designs open: 1
 #   Sim: /afs/ece.cmu.edu/usr/ejglaser/Private/18847/simv
 # Toplevel windows open: 1
@@ -114,23 +114,23 @@ gui_show_toolbar -toolbar {Testbench}
 # End ToolBar settings
 
 # Docked window settings
-set HSPane.1 [gui_create_window -type HSPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 198]
+set HSPane.1 [gui_create_window -type HSPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 409]
 catch { set Hier.1 [gui_share_window -id ${HSPane.1} -type Hier] }
-gui_set_window_pref_key -window ${HSPane.1} -key dock_width -value_type integer -value 198
+gui_set_window_pref_key -window ${HSPane.1} -key dock_width -value_type integer -value 409
 gui_set_window_pref_key -window ${HSPane.1} -key dock_height -value_type integer -value -1
 gui_set_window_pref_key -window ${HSPane.1} -key dock_offset -value_type integer -value 0
-gui_update_layout -id ${HSPane.1} {{left 0} {top 0} {width 197} {height 897} {dock_state left} {dock_on_new_line true} {child_hier_colhier 164} {child_hier_coltype 100} {child_hier_colpd 0} {child_hier_col1 0} {child_hier_col2 1} {child_hier_col3 -1}}
-set DLPane.1 [gui_create_window -type DLPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 281]
+gui_update_layout -id ${HSPane.1} {{left 0} {top 0} {width 408} {height 902} {dock_state left} {dock_on_new_line true} {child_hier_colhier 271} {child_hier_coltype 128} {child_hier_colpd 0} {child_hier_col1 0} {child_hier_col2 1} {child_hier_col3 -1}}
+set DLPane.1 [gui_create_window -type DLPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 276]
 catch { set Data.1 [gui_share_window -id ${DLPane.1} -type Data] }
-gui_set_window_pref_key -window ${DLPane.1} -key dock_width -value_type integer -value 281
-gui_set_window_pref_key -window ${DLPane.1} -key dock_height -value_type integer -value 896
+gui_set_window_pref_key -window ${DLPane.1} -key dock_width -value_type integer -value 276
+gui_set_window_pref_key -window ${DLPane.1} -key dock_height -value_type integer -value 901
 gui_set_window_pref_key -window ${DLPane.1} -key dock_offset -value_type integer -value 0
-gui_update_layout -id ${DLPane.1} {{left 0} {top 0} {width 280} {height 897} {dock_state left} {dock_on_new_line true} {child_data_colvariable 271} {child_data_colvalue 100} {child_data_coltype 45} {child_data_col1 0} {child_data_col2 1} {child_data_col3 2}}
-set Console.1 [gui_create_window -type Console -parent ${TopLevel.1} -dock_state bottom -dock_on_new_line true -dock_extent 369]
+gui_update_layout -id ${DLPane.1} {{left 0} {top 0} {width 275} {height 902} {dock_state left} {dock_on_new_line true} {child_data_colvariable 271} {child_data_colvalue 100} {child_data_coltype 45} {child_data_col1 0} {child_data_col2 1} {child_data_col3 2}}
+set Console.1 [gui_create_window -type Console -parent ${TopLevel.1} -dock_state bottom -dock_on_new_line true -dock_extent 364]
 gui_set_window_pref_key -window ${Console.1} -key dock_width -value_type integer -value 2559
-gui_set_window_pref_key -window ${Console.1} -key dock_height -value_type integer -value 369
+gui_set_window_pref_key -window ${Console.1} -key dock_height -value_type integer -value 364
 gui_set_window_pref_key -window ${Console.1} -key dock_offset -value_type integer -value 0
-gui_update_layout -id ${Console.1} {{left 0} {top 0} {width 2559} {height 368} {dock_state bottom} {dock_on_new_line true}}
+gui_update_layout -id ${Console.1} {{left 0} {top 0} {width 2559} {height 363} {dock_state bottom} {dock_on_new_line true}}
 #### Start - Readjusting docked view's offset / size
 set dockAreaList { top left right bottom }
 foreach dockArea $dockAreaList {
@@ -174,11 +174,11 @@ gui_update_statusbar_target_frame ${TopLevel.1}
 # DVE Open design session: 
 
 if { [llength [lindex [gui_get_db -design Sim] 0]] == 0 } {
-gui_set_env SIMSETUP::SIMARGS {{}}
-gui_set_env SIMSETUP::SIMEXE {./simv}
+gui_set_env SIMSETUP::SIMARGS {{-ucligui }}
+gui_set_env SIMSETUP::SIMEXE {/afs/ece.cmu.edu/usr/ejglaser/Private/18847/simv}
 gui_set_env SIMSETUP::ALLOW_POLL {0}
 if { ![gui_is_db_opened -db {/afs/ece.cmu.edu/usr/ejglaser/Private/18847/simv}] } {
-gui_sim_run Ucli -exe simv -args { -ucligui} -dir /afs/ece.cmu.edu/usr/ejglaser/Private/18847 -nosource
+gui_sim_run Ucli -exe simv -args {-ucligui } -dir /afs/ece.cmu.edu/usr/ejglaser/Private/18847 -nosource
 }
 }
 if { ![gui_sim_state -check active] } {error "Simulator did not start correctly" error}
@@ -200,19 +200,20 @@ gui_set_time_units 1ps
 # Global: Signal Compare
 
 # Global: Signal Groups
+gui_load_child_values {layer_tb}
 
 
-set _session_group_1 Group1
-gui_sg_create "$_session_group_1"
-set Group1 "$_session_group_1"
+set _session_group_3 Group1
+gui_sg_create "$_session_group_3"
+set Group1 "$_session_group_3"
 
-gui_sg_addsignal -group "$_session_group_1" { layer_tb.time_val }
+gui_sg_addsignal -group "$_session_group_3" { layer_tb.winning_neuron }
 
-set _session_group_2 Group2
-gui_sg_create "$_session_group_2"
-set Group2 "$_session_group_2"
+set _session_group_4 Group2
+gui_sg_create "$_session_group_4"
+set Group2 "$_session_group_4"
 
-gui_sg_addsignal -group "$_session_group_2" { layer_tb.time_val }
+gui_sg_addsignal -group "$_session_group_4" { layer_tb.L0.li_winning_neuron }
 
 # Global: Highlighting
 
@@ -247,16 +248,17 @@ gui_list_set_filter -id ${Hier.1} -list { {Package 1} {All 0} {Process 1} {VirtP
 gui_list_set_filter -id ${Hier.1} -text {*}
 gui_hier_list_init -id ${Hier.1}
 gui_change_design -id ${Hier.1} -design Sim
-catch {gui_list_select -id ${Hier.1} {layer_tb}}
+catch {gui_list_expand -id ${Hier.1} layer_tb}
+catch {gui_list_select -id ${Hier.1} {layer_tb.L0}}
 gui_view_scroll -id ${Hier.1} -vertical -set 0
 gui_view_scroll -id ${Hier.1} -horizontal -set 0
 
 # Data 'Data.1'
 gui_list_set_filter -id ${Data.1} -list { {Buffer 1} {Input 1} {Others 1} {Linkage 1} {Output 1} {LowPower 1} {Parameter 1} {All 1} {Aggregate 1} {LibBaseMember 1} {Event 1} {Assertion 1} {Constant 1} {Interface 1} {BaseMembers 1} {Signal 1} {$unit 1} {Inout 1} {Variable 1} }
 gui_list_set_filter -id ${Data.1} -text {*}
-gui_list_show_data -id ${Data.1} {layer_tb}
+gui_list_show_data -id ${Data.1} {layer_tb.L0}
 gui_show_window -window ${Data.1}
-catch { gui_list_select -id ${Data.1} {layer_tb.output_spike_time }}
+catch { gui_list_select -id ${Data.1} {layer_tb.L0.li_winning_neuron }}
 gui_view_scroll -id ${Data.1} -vertical -set 0
 gui_view_scroll -id ${Data.1} -horizontal -set 0
 gui_view_scroll -id ${Hier.1} -vertical -set 0

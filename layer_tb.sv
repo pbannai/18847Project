@@ -11,11 +11,11 @@ module layer_tb();
     logic clk, rst_l, training;
 
 
-    logic  [`num_spikes - 1:0][$clog2(`time_period):0]spike_times, output_spike_times;
+    logic  [`num_spikes - 1:0][`log_time_period:0]spike_times, output_spike_times;
 
-    logic [$clog2(`neurons_per_layer):0] winning_neuron;
-    logic [$clog2(`time_period):0] time_val, time_val_next;
-    logic [$clog2(`time_period):0] output_spike_time;
+    logic [`log_neurons_per_layer:0] winning_neuron;
+    logic [`log_time_period:0] time_val, time_val_next;
+    logic [`log_time_period:0] output_spike_time;
     layer L0 (.clk(clk),
               .training(training),
               .rst_l(rst_l),

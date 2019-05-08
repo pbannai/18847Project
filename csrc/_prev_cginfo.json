@@ -1,0 +1,170 @@
+{
+    "MlibObjs": {},
+    "PrevCompiledModules": {
+        "...MASTER...": {
+            "amcQw_d": {
+                "mode": 4,
+                "mod": "...MASTER...",
+                "bytes": 7449,
+                "out": "objs/amcQw_d.o",
+                "checksum": 4294967295
+            }
+        },
+        "spike_generation": {
+            "ScJZz_d": {
+                "mode": 4,
+                "mod": "spike_generation",
+                "bytes": 9642,
+                "checksum": 4294967295,
+                "archive": "archive.3/_prev_archive_1.a",
+                "out": "ScJZz_d.o"
+            }
+        },
+        "neuron": {
+            "GFYjA_d": {
+                "mode": 4,
+                "mod": "neuron",
+                "bytes": 9680,
+                "checksum": 4294967295,
+                "archive": "archive.3/_prev_archive_1.a",
+                "out": "GFYjA_d.o"
+            }
+        },
+        "std": {
+            "reYIK_d": {
+                "mode": 4,
+                "mod": "std",
+                "bytes": 33308,
+                "checksum": 4294967295,
+                "archive": "archive.3/_prev_archive_1.a",
+                "out": "reYIK_d.o"
+            }
+        },
+        "layer_tb": {
+            "cSIrU_d": {
+                "mode": 4,
+                "mod": "layer_tb",
+                "bytes": 63730,
+                "out": "cSIrU_d.o",
+                "checksum": 4294967295,
+                "archive": "archive.3/_12561_archive_1.a"
+            }
+        },
+        "neuron_tb": {
+            "YAhqZ_d": {
+                "mode": 4,
+                "mod": "neuron_tb",
+                "bytes": 6792,
+                "checksum": 4294967295,
+                "archive": "archive.3/_prev_archive_1.a",
+                "out": "YAhqZ_d.o"
+            }
+        }
+    },
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 90376
+    },
+    "CurCompileModules": [
+        "...MASTER...",
+        "layer_tb"
+    ],
+    "CurCompileUdps": {},
+    "CompileStatus": "Successful",
+    "NameTable": {
+        "std": [
+            "std",
+            "reYIK",
+            "module"
+        ],
+        "layer_tb": [
+            "layer_tb",
+            "cSIrU",
+            "module"
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ],
+        "spike_generation": [
+            "spike_generation",
+            "ScJZz",
+            "module"
+        ],
+        "neuron": [
+            "neuron",
+            "GFYjA",
+            "module"
+        ],
+        "neuron_tb": [
+            "neuron_tb",
+            "YAhqZ",
+            "module"
+        ]
+    },
+    "CompileStrategy": "fullobj",
+    "stat": {
+        "ru_childs_cgstart": {
+            "ru_utime_sec": 0.0,
+            "ru_stime_sec": 0.0,
+            "ru_maxrss_kb": 0,
+            "ru_majflt": 0,
+            "ru_minflt": 0,
+            "ru_nvcsw": 0,
+            "ru_nivcsw": 0
+        },
+        "ru_self_cgstart": {
+            "ru_utime_sec": 0.041374000000000001,
+            "ru_stime_sec": 0.026941,
+            "ru_maxrss_kb": 54852,
+            "ru_majflt": 0,
+            "ru_minflt": 13359,
+            "ru_nvcsw": 153,
+            "ru_nivcsw": 3
+        },
+        "ru_childs_end": {
+            "ru_utime_sec": 0.0,
+            "ru_stime_sec": 0.0,
+            "ru_maxrss_kb": 0,
+            "ru_majflt": 0,
+            "ru_minflt": 0,
+            "ru_nvcsw": 0,
+            "ru_nivcsw": 0
+        },
+        "outputSizePerQuad": 85.0,
+        "nMops": 4577,
+        "nQuads": 1882,
+        "mop/quad": 2.4319872476089266,
+        "quadSpeed": 87101.402323321163,
+        "totalObjSize": 161555,
+        "ru_self_end": {
+            "ru_utime_sec": 0.062980999999999995,
+            "ru_stime_sec": 0.039988000000000003,
+            "ru_maxrss_kb": 64300,
+            "ru_majflt": 0,
+            "ru_minflt": 16051,
+            "ru_nvcsw": 218,
+            "ru_nivcsw": 4
+        },
+        "mopSpeed": 211829.49969917163,
+        "CodeGen(%)": 34.307172004255243,
+        "Frontend(%)": 65.692827995744764
+    },
+    "LVLData": [
+        "SIM"
+    ],
+    "PEModules": [],
+    "CompileProcesses": [
+        "cgproc.12561.json"
+    ],
+    "Misc": {
+        "archive_dir": "archive.3",
+        "csrc": "csrc",
+        "cwd": "/afs/ece.cmu.edu/usr/ejglaser/Private/18847",
+        "csrc_abs": "/afs/ece.cmu.edu/usr/ejglaser/Private/18847/csrc",
+        "daidir_abs": "/afs/ece.cmu.edu/usr/ejglaser/Private/18847/simv.daidir",
+        "daidir": "simv.daidir",
+        "default_output_dir": "csrc"
+    }
+}
