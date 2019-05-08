@@ -16,7 +16,7 @@ module ffi(
         foreach(should_spike_in_l[i]) begin
             num_spikes += !should_spike_in_l[i];
         end
-        if($unsigned(num_spikes) < `ffi_max)begin
+        if($unsigned(num_spikes) <= `ffi_max)begin
             should_spike_out = should_spike_in_l;
         end else begin
             should_spike_out = '1;
