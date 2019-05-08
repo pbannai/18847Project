@@ -81,9 +81,4 @@ module layer_tb();
 
         $finish;
     end
-
-    initial begin
-        #5000
-        $finish;
-    end
 endmodule

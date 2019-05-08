@@ -84,12 +84,12 @@ module layer(
         if(training == 1'b1 && time_val == `time_period - 1)begin
             for(int stdp_neuron = 0; stdp_neuron < `neurons_per_layer; stdp_neuron++)begin
                 for(int spike = 0; spike < `num_spikes; spike++)begin
-                    if(winning_neuron == stdp_neuron)begin
+                    if($unsigned(winning_neuron[4:0]) == $unsigned(stdp_neuron[4:0]))begin
                         if(generated_spikes[spike] == 1'b1)begin
                             debugging = 1;
-                            weights_next[stdp_neuron][spike] = `wmax;        
+			    weights_next[stdp_neuron][spike] = `wmax;
                         end else begin
-                            weights_next[stdp_neuron][spike] = '0;        
+                            weights_next[stdp_neuron][spike] = '0;     
                         end
                     end else if(neuron_spikes[stdp_neuron] == 1'b1)begin
                         if(generated_spikes[spike] == 1'b1)begin
@@ -99,7 +99,7 @@ module layer(
                         end
                     end else begin
                         if(generated_spikes[spike] == 1'b1 && weights_ff[stdp_neuron][spike] < `wmax )begin
-                            weights_next[stdp_neuron][spike] = weights_ff[stdp_neuron][spike] + '1;
+                            weights_next[stdp_neuron][spike] = weights_ff[stdp_neuron][spike] + 3'd1;
                         end else begin
                             weights_next[stdp_neuron][spike] = weights_ff[stdp_neuron][spike];
                         end
