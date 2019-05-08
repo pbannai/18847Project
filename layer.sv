@@ -3,16 +3,16 @@
 `include "internal_defines.vh"
 
 module layer(
-    input logic clk, rst_l,
+    input logic clk, rst_l, training,
     input logic [$clog2(`time_period):0] time_val,
     input logic [`num_spikes-1:0][$clog2(`time_period):0] spike_times,
     output logic [$clog2(`time_period):0] output_spike_time,
-    output logic [$clog2(`neurons_per_layer)-1:0]  winning_neuron
+    output logic [$clog2(`neurons_per_layer):0]  winning_neuron
 
 );
     genvar i;
 
-    logic [$clog2(`neurons_per_layer)-1:0] li_winning_neuron, winning_neuron_next;
+    logic [$clog2(`neurons_per_layer):0] li_winning_neuron, winning_neuron_next;
 
     logic [`neurons_per_layer-1:0][`num_spikes-1:0][`WBITS-1:0] weights_next, weights_ff;
 
@@ -24,7 +24,7 @@ module layer(
         if(rst_l == 1'b0)begin
             output_spike_time <= '0;
             output_spike_time_ff <= '0;
-            winning_neuron <= '0;
+            winning_neuron <= -1;
             weights_ff <= 0;
         end else begin
             output_spike_time_ff <= output_spike_time_ff_next;
@@ -80,33 +80,35 @@ module layer(
     
     always_comb begin
         //stdp
-        
-        for(int stdp_neuron = 0; stdp_neuron < `neurons_per_layer; stdp_neuron++)begin
-            if(time_val == `time_period - 1)begin
-                if(winning_neuron == stdp_neuron)begin
-                    if(neuron_spikes[stdp_neuron] == 1'b1)begin
-                        weights_next[stdp_neuron] = `wmax;        
-                    end else begin
-                        weights_next[stdp_neuron] = '0;        
-                    end
-                end else if(neuron_spikes[stdp_neuron] == 1'b1)begin
-                    if(neuron_spikes[stdp_neuron] == 1'b1)begin
-                        weights_next[stdp_neuron] = '0;
-                    end else begin
-                        weights_next[stdp_neuron] = weights_ff[stdp_neuron];
-                    end
-                end else begin
-                    if(spike_times[stdp_neuron][$clog2(`time_period)] == 1'b0 && weights_ff[stdp_neuron] < `wmax )begin
-                        weights_next[stdp_neuron] = weights_ff[stdp_neuron] + '1;
-                    end else begin
-                        weights_next[stdp_neuron] = weights_ff[stdp_neuron];
-                    end
-                end
-            end else begin
-                weights_next[stdp_neuron] = weights_ff[stdp_neuron];
-            end
-        end
-
+        if(training == 1'b1)begin
+		for(int stdp_neuron = 0; stdp_neuron < `neurons_per_layer; stdp_neuron++)begin
+		    if(time_val == `time_period - 1)begin
+		        if(winning_neuron == stdp_neuron)begin
+		            if(neuron_spikes[stdp_neuron] == 1'b1)begin
+		                weights_next[stdp_neuron] = `wmax;        
+		            end else begin
+		                weights_next[stdp_neuron] = '0;        
+		            end
+		        end else if(neuron_spikes[stdp_neuron] == 1'b1)begin
+		            if(neuron_spikes[stdp_neuron] == 1'b1)begin
+		                weights_next[stdp_neuron] = '0;
+		            end else begin
+		                weights_next[stdp_neuron] = weights_ff[stdp_neuron];
+		            end
+		        end else begin
+		            if(spike_times[stdp_neuron][$clog2(`time_period)] == 1'b0 && weights_ff[stdp_neuron] < `wmax )begin
+		                weights_next[stdp_neuron] = weights_ff[stdp_neuron] + '1;
+		            end else begin
+		                weights_next[stdp_neuron] = weights_ff[stdp_neuron];
+		            end
+		        end
+		    end else begin
+		        weights_next[stdp_neuron] = weights_ff[stdp_neuron];
+		    end
+		end
+	end else begin
+		weights_next = weights_ff;
+	end
     end
 
 

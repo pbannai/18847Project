@@ -1,12 +1,22 @@
 {
-    "std": [
-        "std",
-        "reYIK",
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module"
+    ],
+    "spike_generation": [
+        "spike_generation",
+        "ScJZz",
         "module"
     ],
     "layer_tb": [
         "layer_tb",
         "cSIrU",
+        "module"
+    ],
+    "std": [
+        "std",
+        "reYIK",
         "module"
     ],
     "neuron_tb": [
@@ -17,16 +27,6 @@
     "neuron": [
         "neuron",
         "GFYjA",
-        "module"
-    ],
-    "spike_generation": [
-        "spike_generation",
-        "ScJZz",
-        "module"
-    ],
-    "...MASTER...": [
-        "SIM",
-        "amcQw",
         "module"
     ]
 }

@@ -1,0 +1,103 @@
+{
+    "Modules": {
+        "spike_generation": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "layer_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 16
+        },
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "...MASTER...": {},
+        "neuron_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "neuron": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        }
+    },
+    "CompUnits": {
+        "amcQw_d": {
+            "mode": 4,
+            "mod": "...MASTER...",
+            "out": "objs/amcQw_d.o",
+            "bytes": 7449,
+            "checksum": 4294967295
+        },
+        "YAhqZ_d": {
+            "mode": 4,
+            "mod": "neuron_tb",
+            "out": "YAhqZ_d.o",
+            "bytes": 6792,
+            "checksum": 4294967295,
+            "archive": "archive.15/_2844_archive_1.a"
+        },
+        "reYIK_d": {
+            "mode": 4,
+            "mod": "std",
+            "out": "reYIK_d.o",
+            "bytes": 33308,
+            "checksum": 4294967295,
+            "archive": "archive.15/_2844_archive_1.a"
+        },
+        "cSIrU_d": {
+            "mode": 4,
+            "mod": "layer_tb",
+            "out": "cSIrU_d.o",
+            "bytes": 63730,
+            "checksum": 4294967295,
+            "archive": "archive.15/_2844_archive_1.a"
+        },
+        "GFYjA_d": {
+            "mode": 4,
+            "mod": "neuron",
+            "out": "GFYjA_d.o",
+            "bytes": 9680,
+            "checksum": 4294967295,
+            "archive": "archive.15/_2844_archive_1.a"
+        },
+        "ScJZz_d": {
+            "mode": 4,
+            "mod": "spike_generation",
+            "out": "ScJZz_d.o",
+            "bytes": 9642,
+            "checksum": 4294967295,
+            "archive": "archive.15/_2844_archive_1.a"
+        }
+    },
+    "reusePaths": {},
+    "ObjArchives": [
+        {
+            "objects": [
+                [
+                    "reYIK_d.o",
+                    33308
+                ],
+                [
+                    "cSIrU_d.o",
+                    63730
+                ],
+                [
+                    "GFYjA_d.o",
+                    9680
+                ],
+                [
+                    "YAhqZ_d.o",
+                    6792
+                ],
+                [
+                    "ScJZz_d.o",
+                    9642
+                ]
+            ],
+            "archive": "archive.15/_2844_archive_1.a",
+            "size": 123152
+        }
+    ]
+}

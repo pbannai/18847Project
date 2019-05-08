@@ -1,5 +1,11 @@
 0 
-27
+36
++cli+4
++itf+/afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/vcsd.tab
++memcbk
++vcsd
++vpi
++vpi
 -Mamsrun=
 -Masflags=
 -Mcc=gcc
@@ -13,12 +19,15 @@
 -Mobjects= /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/libvirsim.so /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/liberrorinf.so /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/libsnpsmalloc.so
 -Mout=simv
 -Msaverestoreobj=/afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/vcs_save_restore_new.o
--Msyslibs=-ldl
+-Msyslibs=-ldl -lm
 -Mvcsaceobjs=
 -Mxcflags= -pipe -fPIC -I/afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/include
+-debug=3
 -gen_obj
+-gui
 -picarchive
 -sverilog
+-ucli
 /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/bin/vcs1
 ffi.sv
 lateral_inhibition.sv
@@ -36,15 +45,15 @@ ftp_proxy=http://proximus.ece.cmu.edu:3128/
 XMODIFIERS=@im=ibus
 XDG_VTNR=1
 XDG_SESSION_TYPE=x11
-XDG_SESSION_ID=410
+XDG_SESSION_ID=477
 XDG_SESSION_DESKTOP=gnome-classic
 XDG_SEAT=seat0
 XDG_RUNTIME_DIR=/run/user/3278
 XDG_MENU_PREFIX=gnome-
 XDG_DATA_DIRS=/afs/ece.cmu.edu/usr/ejglaser/.local/share/flatpak/exports/share/:/var/lib/flatpak/exports/share/:/usr/local/share/:/usr/share/
 XDG_CURRENT_DESKTOP=GNOME-Classic:GNOME
-XAUTHORITY=/run/gdm/auth-for-ejglaser-Lkathn/database
-WINDOWPATH=1:1
+XAUTHORITY=/run/gdm/auth-for-ejglaser-ca5Mk4/database
+WINDOWPATH=1:1:1:1:1
 VTE_VERSION=5202
 VMR_MODE_FLAG=32
 VCS_VERSION=vcs-mx_vK-2015.09
@@ -64,8 +73,8 @@ SYNOPSYS_LICENSE=/afs/ece.cmu.edu/support/synopsys/license.dat
 SYNOPSYS_HOME=/afs/ece.cmu.edu/support/synopsys/synopsys.release
 SSH_AUTH_SOCK=/run/user/3278/keyring/ssh
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
-SSH_AGENT_PID=23002
-SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/22980,unix/unix:/tmp/.ICE-unix/22980
+SSH_AGENT_PID=21915
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/21894,unix/unix:/tmp/.ICE-unix/21894
 SCRNAME=vcs
 SCRIPT_NAME=vcs
 QT_PLUGIN_PATH=/usr/lib64/kde4/plugins:/usr/lib/kde4/plugins
@@ -87,7 +96,7 @@ HTTP_PROXY=http://proximus.ece.cmu.edu:3128/
 HTTPS_PROXY=http://proximus.ece.cmu.edu:3128/
 HISTCONTROL=ignoredups
 GNOME_TERMINAL_SERVICE=:1.84
-GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/7d73fdbc_d20f_4004_b1c5_30fc55c1954d
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/ee419d90_9779_40dc_a197_fad3b4d3fc69
 GNOME_SHELL_SESSION_MODE=classic
 GNOME_DESKTOP_SESSION_ID=this-is-deprecated
 GJS_DEBUG_TOPICS=JS ERROR;JS LOG
@@ -98,24 +107,25 @@ FTP_PROXY=http://proximus.ece.cmu.edu:3128/
 DESKTOP_SESSION=gnome-classic
 DC_VERSION=syn-vJ-2014.09-SP4
 DC_HOME=/afs/ece.cmu.edu/support/synopsys/synopsys.release/syn-vJ-2014.09-SP4
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-xqSiR3lBUg,guid=5ecdf5b6fabed2f3444769d75cd2ee49
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-HEMR8LqFPQ,guid=868d73f03d43c5b0ed179c335cd324d0
 CVS_RSH=ssh
 COLORTERM=truecolor
 BASH_FUNC_module()=() {  eval `/usr/bin/modulecmd bash $*`_}
 AKLOG=/usr/bin/aklog
 0
-8
+9
 1556499831 internal_defines.vh
-1556500170 spike_generation.sv
+1557341463 spike_generation.sv
 1557327718 neuron_tb.sv
 1556648420 neuron.sv
-1557333807 layer_tb.sv
-1557333785 layer.sv
-1557333720 lateral_inhibition.sv
-1556499854 ffi.sv
+1557342522 layer_tb.sv
+1557342206 layer.sv
+1557342245 lateral_inhibition.sv
+1557341454 ffi.sv
+1440562444 /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/vcsd.tab
 4
 0 
 1440563255 /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/libvirsim.so
 1440562843 /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/liberrorinf.so
 1440562824 /afs/ece.cmu.edu/support/synopsys/synopsys.release/vcs-mx_vK-2015.09/linux64/lib/libsnpsmalloc.so
-1557333819 simv.daidir
+1557342569 simv.daidir

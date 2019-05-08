@@ -1,74 +1,88 @@
 {
+    "CompileStatus": "Successful",
     "MlibObjs": {},
+    "CompileProcesses": [
+        "cgproc.2197.json"
+    ],
     "PrevCompiledModules": {
         "neuron": {
             "GFYjA_d": {
+                "out": "GFYjA_d.o",
                 "bytes": 8145,
                 "mod": "neuron",
                 "mode": 4,
-                "checksum": 4294967295,
-                "out": "GFYjA_d.o",
-                "archive": "archive.5/_prev_archive_1.a"
-            }
-        },
-        "std": {
-            "reYIK_d": {
-                "bytes": 28470,
-                "mod": "std",
-                "mode": 4,
-                "checksum": 4294967295,
-                "out": "reYIK_d.o",
-                "archive": "archive.5/_prev_archive_1.a"
-            }
-        },
-        "layer_tb": {
-            "cSIrU_d": {
-                "bytes": 41300,
-                "mod": "layer_tb",
-                "archive": "archive.5/_4603_archive_1.a",
-                "out": "cSIrU_d.o",
-                "mode": 4,
+                "archive": "archive.14/_prev_archive_1.a",
                 "checksum": 4294967295
             }
         },
         "...MASTER...": {
             "amcQw_d": {
+                "out": "objs/amcQw_d.o",
                 "bytes": 7449,
                 "mod": "...MASTER...",
-                "out": "objs/amcQw_d.o",
                 "mode": 4,
+                "checksum": 4294967295
+            }
+        },
+        "std": {
+            "reYIK_d": {
+                "out": "reYIK_d.o",
+                "bytes": 28470,
+                "mod": "std",
+                "mode": 4,
+                "archive": "archive.14/_prev_archive_1.a",
+                "checksum": 4294967295
+            }
+        },
+        "spike_generation": {
+            "ScJZz_d": {
+                "out": "ScJZz_d.o",
+                "bytes": 8579,
+                "mod": "spike_generation",
+                "mode": 4,
+                "archive": "archive.14/_prev_archive_1.a",
+                "checksum": 4294967295
+            }
+        },
+        "layer_tb": {
+            "cSIrU_d": {
+                "out": "cSIrU_d.o",
+                "bytes": 43837,
+                "mod": "layer_tb",
+                "mode": 4,
+                "archive": "archive.14/_2197_archive_1.a",
                 "checksum": 4294967295
             }
         },
         "neuron_tb": {
             "YAhqZ_d": {
+                "out": "YAhqZ_d.o",
                 "bytes": 5858,
                 "mod": "neuron_tb",
                 "mode": 4,
-                "checksum": 4294967295,
-                "out": "YAhqZ_d.o",
-                "archive": "archive.5/_prev_archive_1.a"
-            }
-        },
-        "spike_generation": {
-            "ScJZz_d": {
-                "bytes": 8511,
-                "mod": "spike_generation",
-                "mode": 4,
-                "checksum": 4294967295,
-                "out": "ScJZz_d.o",
-                "archive": "archive.5/_prev_archive_1.a"
+                "archive": "archive.14/_prev_archive_1.a",
+                "checksum": 4294967295
             }
         }
     },
-    "CompileStrategy": "fullobj",
-    "CompileProcesses": [
-        "cgproc.4603.json"
-    ],
+    "SIMBData": {
+        "bytes": 58658,
+        "out": "amcQwB.o"
+    },
     "NameTable": {
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ],
         "std": [
             "std",
             "reYIK",
+            "module"
+        ],
+        "spike_generation": [
+            "spike_generation",
+            "ScJZz",
             "module"
         ],
         "layer_tb": [
@@ -81,90 +95,76 @@
             "GFYjA",
             "module"
         ],
-        "...MASTER...": [
-            "SIM",
-            "amcQw",
-            "module"
-        ],
         "neuron_tb": [
             "neuron_tb",
             "YAhqZ",
             "module"
-        ],
-        "spike_generation": [
-            "spike_generation",
-            "ScJZz",
-            "module"
         ]
     },
+    "PEModules": [],
+    "CompileStrategy": "fullobj",
+    "CurCompileUdps": {},
     "stat": {
-        "mop/quad": 2.8871925360474977,
+        "CodeGen(%)": 33.978175500823397,
+        "totalObjSize": 111708,
+        "outputSizePerQuad": 84.0,
         "ru_self_cgstart": {
-            "ru_minflt": 13041,
-            "ru_maxrss_kb": 53612,
-            "ru_utime_sec": 0.068053000000000002,
-            "ru_stime_sec": 0.023018,
+            "ru_utime_sec": 0.036483000000000002,
+            "ru_nvcsw": 108,
+            "ru_stime_sec": 0.030402999999999999,
+            "ru_maxrss_kb": 53556,
             "ru_majflt": 0,
-            "ru_nvcsw": 110,
+            "ru_minflt": 12980,
+            "ru_nivcsw": 6
+        },
+        "ru_childs_cgstart": {
+            "ru_utime_sec": 0.0,
+            "ru_nvcsw": 0,
+            "ru_stime_sec": 0.0,
+            "ru_maxrss_kb": 0,
+            "ru_majflt": 0,
+            "ru_minflt": 0,
+            "ru_nivcsw": 0
+        },
+        "nMops": 3627,
+        "nQuads": 1319,
+        "ru_self_end": {
+            "ru_utime_sec": 0.055259000000000003,
+            "ru_nvcsw": 160,
+            "ru_stime_sec": 0.039183999999999997,
+            "ru_maxrss_kb": 62632,
+            "ru_majflt": 0,
+            "ru_minflt": 15587,
             "ru_nivcsw": 6
         },
         "ru_childs_end": {
-            "ru_minflt": 0,
-            "ru_maxrss_kb": 0,
             "ru_utime_sec": 0.0,
-            "ru_stime_sec": 0.0,
-            "ru_majflt": 0,
             "ru_nvcsw": 0,
+            "ru_stime_sec": 0.0,
+            "ru_maxrss_kb": 0,
+            "ru_majflt": 0,
+            "ru_minflt": 0,
             "ru_nivcsw": 0
         },
-        "outputSizePerQuad": 91.0,
-        "ru_childs_cgstart": {
-            "ru_minflt": 0,
-            "ru_maxrss_kb": 0,
-            "ru_utime_sec": 0.0,
-            "ru_stime_sec": 0.0,
-            "ru_majflt": 0,
-            "ru_nvcsw": 0,
-            "ru_nivcsw": 0
-        },
-        "Frontend(%)": 74.950714230646383,
-        "nMops": 3404,
-        "nQuads": 1179,
-        "totalObjSize": 107815,
-        "ru_self_end": {
-            "ru_minflt": 15460,
-            "ru_maxrss_kb": 60404,
-            "ru_utime_sec": 0.090797000000000003,
-            "ru_stime_sec": 0.037326999999999999,
-            "ru_majflt": 0,
-            "ru_nvcsw": 167,
-            "ru_nivcsw": 6
-        },
-        "mopSpeed": 149665.84593739008,
-        "quadSpeed": 51837.847344354552,
-        "CodeGen(%)": 25.049285769353613
+        "quadSpeed": 70249.254367277375,
+        "mopSpeed": 193172.13463996589,
+        "Frontend(%)": 66.021824499176603,
+        "mop/quad": 2.7498104624715696
     },
-    "SIMBData": {
-        "out": "amcQwB.o",
-        "bytes": 58630
+    "Misc": {
+        "default_output_dir": "csrc",
+        "cwd": "/afs/ece.cmu.edu/usr/ejglaser/Private/18847",
+        "daidir_abs": "/afs/ece.cmu.edu/usr/ejglaser/Private/18847/simv.daidir",
+        "csrc_abs": "/afs/ece.cmu.edu/usr/ejglaser/Private/18847/csrc",
+        "csrc": "csrc",
+        "daidir": "simv.daidir",
+        "archive_dir": "archive.14"
     },
-    "CompileStatus": "Successful",
-    "PEModules": [],
-    "CurCompileUdps": {},
-    "LVLData": [
-        "SIM"
-    ],
     "CurCompileModules": [
         "...MASTER...",
         "layer_tb"
     ],
-    "Misc": {
-        "archive_dir": "archive.5",
-        "cwd": "/afs/ece.cmu.edu/usr/ejglaser/Private/18847",
-        "csrc": "csrc",
-        "default_output_dir": "csrc",
-        "daidir": "simv.daidir",
-        "csrc_abs": "/afs/ece.cmu.edu/usr/ejglaser/Private/18847/csrc",
-        "daidir_abs": "/afs/ece.cmu.edu/usr/ejglaser/Private/18847/simv.daidir"
-    }
+    "LVLData": [
+        "SIM"
+    ]
 }
