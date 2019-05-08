@@ -4,8 +4,9 @@
 # Allow for files nested within directories, ignore any output directory, this
 # is where compiled files go
 !*/
-output/
-
+simv
+csrc/
+simv.daidir
 # Allow for Verilog and System Verilog files
 !*.sv
 !*.v

@@ -11,7 +11,7 @@ module spike_generation(
 );
 
     always_comb begin
-        if(($unsigned(spike_time) > $unsigned(time_val)) && should_spike == 1'b0)begin
+        if(($unsigned(spike_time) <= $unsigned(time_val)) && should_spike == 1'b0)begin
             spike_val = 1'b1;
         end else begin
             spike_val = 1'b0;
