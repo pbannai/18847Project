@@ -1,0 +1,32 @@
+{
+    "std": [
+        "std",
+        "reYIK",
+        "module"
+    ],
+    "layer_tb": [
+        "layer_tb",
+        "cSIrU",
+        "module"
+    ],
+    "neuron_tb": [
+        "neuron_tb",
+        "YAhqZ",
+        "module"
+    ],
+    "neuron": [
+        "neuron",
+        "GFYjA",
+        "module"
+    ],
+    "spike_generation": [
+        "spike_generation",
+        "ScJZz",
+        "module"
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module"
+    ]
+}

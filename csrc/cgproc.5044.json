@@ -1,0 +1,43 @@
+{
+    "Modules": {
+        "...MASTER...": {},
+        "std": {},
+        "layer_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 7
+        },
+        "neuron_tb": {},
+        "neuron": {},
+        "spike_generation": {}
+    },
+    "CompUnits": {
+        "amcQw_d": {
+            "mod": "...MASTER...",
+            "out": "objs/amcQw_d.o",
+            "bytes": 7449,
+            "mode": 4,
+            "checksum": 4294967295
+        },
+        "cSIrU_d": {
+            "mod": "layer_tb",
+            "out": "cSIrU_d.o",
+            "bytes": 41300,
+            "mode": 4,
+            "archive": "archive.6/_5044_archive_1.a",
+            "checksum": 4294967295
+        }
+    },
+    "ObjArchives": [
+        {
+            "archive": "archive.6/_5044_archive_1.a",
+            "objects": [
+                [
+                    "cSIrU_d.o",
+                    41300
+                ]
+            ],
+            "size": 41300
+        }
+    ],
+    "reusePaths": {}
+}

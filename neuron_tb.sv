@@ -5,6 +5,7 @@
 module neuron_tb();
     int i = 0;
     int j = 0;
+/*
     initial begin
         spikes_in = 8'b0000_0000;
         weights = {`num_spikes{`WBITS'b0}};
@@ -19,4 +20,5 @@ module neuron_tb();
             spikes_in = spikes_in + (1'b1 << $urandom_range(`num_spikes-1,0));
         end
     end
+*/
 endmodule
