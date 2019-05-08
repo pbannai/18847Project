@@ -19,9 +19,9 @@ module lateral_inhibition(
     always_comb begin
         output_spike_time = '0;
         output_spike = 1'b0;
-        winning_neuron = '0;
-        if(last_winning_neuron == -1)begin
-            foreach(spike_volley[i]) begin
+        if(last_winning_neuron == 5'b11111)begin
+            winning_neuron = -1;
+            for(int i = 0; i < `neurons_per_layer; i++) begin
                 if(spike_volley[i] == 1'b1)begin
                     output_spike_time = time_val;
                     output_spike = 1'b0;
