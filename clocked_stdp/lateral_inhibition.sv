@@ -6,10 +6,10 @@ module lateral_inhibition(
     input logic [`log_time_period:0] time_val,
     input logic [`neurons_per_layer-1:0] spike_volley,
     input logic last_output_spike,
-    input logic [`log_time_period-1:0]  last_output_spike_time,
+    input logic [`log_testing_period-1:0]  last_output_spike_time,
     input logic [`log_neurons_per_layer:0] last_winning_neuron,
     output logic output_spike,
-    output logic [`log_time_period-1:0] output_spike_time,
+    output logic [`log_testing_period-1:0] output_spike_time,
     output logic [`log_neurons_per_layer:0] winning_neuron
 
 );
@@ -19,7 +19,7 @@ module lateral_inhibition(
     always_comb begin
         output_spike_time = '0;
         output_spike = 1'b0;
-        if(last_winning_neuron == 5'b11111)begin
+        if(last_winning_neuron == 5'b11111 && $unsigned(time_val) < `testing_period)begin
             winning_neuron = -1;
             for(int i = 0; i < `neurons_per_layer; i++) begin
                 if(spike_volley[i] == 1'b1)begin
