@@ -27,7 +27,8 @@ i = 0
 with open(readpath, "r") as csvfile:
 	readCSV = csv.reader(csvfile, delimiter=' ')
 	for row in readCSV:
-		input_winner[i] = int(row[0])
+		winner = int(row[len(row)-1])
+		input_winner[i] = winner
 		i += 1
 for i in range(image_low, image_high):
 	neuron = math.floor(input_winner[i-image_low])
