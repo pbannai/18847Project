@@ -5,8 +5,8 @@
 module layer(
     input logic clk, rst_l, training,
     input logic [`log_time_period:0] time_val,
-    input logic [`num_spikes-1:0][`log_time_period:0] spike_times,
-    output logic [`log_time_period:0] output_spike_time,
+    input logic [`num_spikes-1:0][`log_testing_period:0] spike_times,
+    output logic [`log_testing_period:0] output_spike_time,
     output logic [`log_neurons_per_layer:0]  winning_neuron
 
 );
@@ -16,7 +16,7 @@ module layer(
 
     logic [`neurons_per_layer-1:0][`num_spikes-1:0][`WBITS-1:0] weights_next, weights_ff;
 
-    logic [`log_time_period:0] li_output_spike_time, output_spike_time_next, output_spike_time_ff, output_spike_time_ff_next;
+    logic [`log_testing_period:0] li_output_spike_time, output_spike_time_next, output_spike_time_ff, output_spike_time_ff_next;
 
    
 
@@ -47,10 +47,10 @@ module layer(
     generate
         //spike generation
         for(i = 0; i < `num_spikes; i++)begin
-            assign spike_enable_l[i] = spike_times[i][`log_time_period];
+            assign spike_enable_l[i] = spike_times[i][`log_testing_period];
             spike_generation sg(.time_val(time_val),
                              .should_spike(spike_enable_inhibited[i]),
-                             .spike_time(spike_times[i][`log_time_period-1:0]),
+                             .spike_time(spike_times[i][`log_testing_period-1:0]),
                              .spike_val(generated_spikes[i])
                             );
         end
@@ -70,11 +70,11 @@ module layer(
 
     lateral_inhibition li(.time_val(time_val),
                           .spike_volley(neuron_spikes),
-                          .last_output_spike(output_spike_time_ff[`log_time_period]),
-                          .last_output_spike_time(output_spike_time_ff[`log_time_period-1:0]),
+                          .last_output_spike(output_spike_time_ff[`log_testing_period]),
+                          .last_output_spike_time(output_spike_time_ff[`log_testing_period-1:0]),
                           .last_winning_neuron(winning_neuron),
-                          .output_spike(li_output_spike_time[`log_time_period]),
-                          .output_spike_time(li_output_spike_time[`log_time_period-1:0]),
+                          .output_spike(li_output_spike_time[`log_testing_period]),
+                          .output_spike_time(li_output_spike_time[`log_testing_period-1:0]),
                           .winning_neuron(li_winning_neuron)
                            );
 

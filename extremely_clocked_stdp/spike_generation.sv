@@ -5,7 +5,7 @@
 module spike_generation(
     input logic should_spike,
     input logic [`log_time_period:0] time_val,
-    input logic [`log_time_period-1:0] spike_time,
+    input logic [`log_testing_period-1:0] spike_time,
     output logic spike_val
 
 );

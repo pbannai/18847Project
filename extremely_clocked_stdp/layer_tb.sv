@@ -10,11 +10,11 @@ module layer_tb();
     logic clk, rst_l, training;
 
 
-    logic  [`num_spikes - 1:0][`log_time_period:0] spike_times;
+    logic  [`num_spikes - 1:0][`log_testing_period:0] spike_times;
 
     logic [`log_neurons_per_layer:0] winning_neuron;
     logic [`log_time_period:0] time_val, time_val_next;
-    logic [`log_time_period:0] output_spike_time;
+    logic [`log_testing_period:0] output_spike_time;
     layer L0 (.clk(clk),
               .training(training),
               .rst_l(rst_l),
@@ -47,7 +47,9 @@ module layer_tb();
         end
     end
 
+    int image;
     initial begin
+        image = 0;
         rst_l = 0;
         repeat (1) @(posedge clk);
         rst_l = 1;
@@ -58,12 +60,14 @@ module layer_tb();
             // fill spikes into spike_times
             for(i=0; i < `num_spikes; i++)begin
                 $fscanf(training_spikes_fd, "%d\n", spike_times[i]);            
-                //$display("value of spikes[%1d]: %b", i, spike_times[i]);
             end
             repeat (`time_period) @(posedge clk);
+            $display("Trained Image %d", image);
+            image = image + 1;
         end
         $fclose(training_spikes_fd);
-
+        $display("Finished Training");
+        image = 0;
         training = 0;
         testing_spikes_fd = $fopen("testing_spikes.csv", "r");
         testing_results_fd = $fopen("testing_results.csv", "w");
@@ -71,11 +75,12 @@ module layer_tb();
             // fill spikes into spike_times
             for(i=0; i < `num_spikes; i++)begin
                 $fscanf(testing_spikes_fd, "%d\n", spike_times[i]);            
-            //    $display("value of spikes[%1d]: %b", i, spike_times[i]);
             end
-            repeat (7) @(posedge clk);
+            repeat (`testing_period) @(posedge clk);
             $fdisplay(testing_results_fd, "%d", winning_neuron);
             repeat (1) @(posedge clk);
+            $display("Tested Image %d", image);
+            image = image + 1;
         end
         $fclose(testing_spikes_fd);
         $fclose(testing_results_fd);
