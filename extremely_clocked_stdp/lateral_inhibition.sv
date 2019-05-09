@@ -6,10 +6,10 @@ module lateral_inhibition(
     input logic [`log_time_period:0] time_val,
     input logic [`neurons_per_layer-1:0] spike_volley,
     input logic last_output_spike,
-    input logic [`log_time_period-1:0]  last_output_spike_time,
+    input logic [`log_testing_period-1:0]  last_output_spike_time,
     input logic [`log_neurons_per_layer:0] last_winning_neuron,
     output logic output_spike,
-    output logic [`log_time_period-1:0] output_spike_time,
+    output logic [`log_testing_period-1:0] output_spike_time,
     output logic [`log_neurons_per_layer:0] winning_neuron
 
 );

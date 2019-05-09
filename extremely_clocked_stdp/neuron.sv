@@ -9,7 +9,7 @@ module neuron(
     input  logic [`num_spikes-1:0][`WBITS-1:0] weights,
     output logic spikes_out);
 
-    logic [8:0] sum;
+    logic [(`log_neurons_per_layer - 1) * (`log_num_spikes-1):0] sum;
     int i;
     always @* begin
         sum = 'd0;
