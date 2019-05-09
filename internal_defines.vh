@@ -3,7 +3,7 @@
 
 `define  time_period            8
 `define  log_time_period	3
-`define  ffi_max                3
+`define  ffi_max                4
 `define  num_spikes             8
 `define  log_num_spikes		3
 `define  neurons_per_layer     16
