@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
- `default_nettype none
+// `default_nettype none
 `include "internal_defines.vh"
 
 module spike_generation(
